@@ -1,12 +1,7 @@
-function love.load()
-  require("src.globals")
-  require("globals.development")
-  require("run.debugger")
-end
+require("src.globals.development")
+require("src.app.main")
 
-function love.update() end
+--- Examples ---
 
-function love.draw()
-  local message = "Hello World!"
-  love.graphics.print(message, 8, 8)
-end
+-- require("lib.image.palettes.example.main")
+-- require("lib.image.grid.example.main")

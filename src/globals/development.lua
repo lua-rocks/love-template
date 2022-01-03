@@ -1,8 +1,27 @@
-inspect = require("lib.inspect")
-execute = require("lib.execute")
+require("src.globals")
+inspect = require("lib.debug.inspect")
+devmode = true
 
----Print inspection of the variable.
----@param ... any
+--- Debugging any variable with `lib.any.log` and `lib.any.inspect`
+---
+---```lua
+---dump({ "Hello", "World!" })
+---```
 function dump(...)
-  print(inspect(...))
+  log.debug(inspect(...))
+end
+
+love.keypressed = function(key)
+  if key == "escape" then
+    love.event.quit()
+  end
+end
+
+log.info("initialized in development mode")
+
+if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" then
+  package.loaded["lldebugger"] = assert(
+    loadfile(os.getenv("LOCAL_LUA_DEBUGGER_FILEPATH"))
+  )()
+  require("lldebugger").start()
 end

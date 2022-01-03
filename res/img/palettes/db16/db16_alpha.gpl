@@ -1,0 +1,22 @@
+GIMP Palette
+Channels: RGBA
+Name: db16
+Columns: 4
+#
+222 238 214 255 #1  white
+109 194 202 255 #2  cyan
+89  125 206 255 #3  water
+48  52  109 255 #4  blue
+210 170 153 255 #5  pink
+208 70  72  255 #6  red
+68  36  52  255 #7  brown
+20  12  28  255 #8  black
+218 212 94  255 #9  yellow
+210 125 44  255 #10 orange
+133 76  48  255 #11 wood
+78  74  78  255 #12 gray
+109 170 44  255 #13 grass
+52  101 36  255 #14 green
+133 149 161 255 #15 silver
+117 113 97  255 #16 rock
+255 0   255 0   #17 transparent

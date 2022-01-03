@@ -1,8 +1,6 @@
--- luacheck: no global
-
-package.path = package.path
-  .. ";src/?/init.lua;lib/?/init.lua"
-  .. ";src/?.lua;lib/?.lua"
-
-lume = require("lume")
-proto = require("proto")
+proto = require("lib.table.proto")
+log = require("lib.debug.log")
+-- log.outfile = "log/main.log"
+log.usecolor = true
+love.graphics.setDefaultFilter("nearest", "nearest", 0)
+love.keyboard.setKeyRepeat(true)

@@ -1,4 +1,5 @@
--- Disabled in production for better performance.
-assert = function(...) -- luacheck: ignore
-  return ...
-end
+require("src.globals")
+devmode = false
+log.level = "info"
+
+log.info("initialized in production mode")

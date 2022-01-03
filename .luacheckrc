@@ -1,6 +1,17 @@
 -- luacheck: no global
 
-new_globals = { "love", "lume", "inspect", "dump", "execute" }
+quiet = 1
+
+new_globals = {
+  "_",
+  "_L",
+  "love",
+  "proto",
+  "inspect",
+  "dump",
+  "devmode",
+  "log",
+}
 
 exclude_files = { "**/.*", "git/**" }
 

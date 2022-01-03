@@ -9,14 +9,10 @@
       "type": "lua-local",
       "request": "launch",
       "program": {
-        "command": "luajit",
+        "command": "love"
       },
-      "args": [
-        "run/default.lua"
-      ],
-      "scriptRoots": [
-        "${workspaceFolder}"
-      ]
+      "args": ["${workspaceFolder}"],
+      "scriptRoots": ["${workspaceFolder}"]
     },
     {
       "name": "Debug Lua File",
@@ -26,9 +22,7 @@
         "lua": "luajit",
         "file": "${file}"
       },
-      "scriptRoots": [
-        "${workspaceFolder}"
-      ],
+      "scriptRoots": ["${workspaceFolder}"]
     }
   ]
 }
