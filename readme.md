@@ -1,4 +1,4 @@
-# LOVE-template (WIP)
+# LÖVE-template (WIP)
 
 This project is a minimal pixel-style game template based on [LÖVE][] engine.
 

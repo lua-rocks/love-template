@@ -1,7 +1,7 @@
 return {
   node = "gui.rect",
-  pos = { "50%", "50%" },
-  size = { "20%", 32 },
+  pos = { "50%8", "50%8" },
+  size = { "25%8", "5x8" },
   skin = "orange",
   {
     node = "gui.text",

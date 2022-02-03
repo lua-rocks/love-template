@@ -1,13 +1,18 @@
 local lg = love.graphics
 
+---If `size` or `pos` is string, it can be one of these formats:
+---
+---+ "50%" = 50% of parent's value;
+---+ "50%4" = 50% of parent's value, rounded by 4 pixels;
+---+ "4x4" = 16 (convenient when you want to set value in tiles).
 ---@class src.app.drawable
 ---@field app src.app
 ---@field parent src.app.drawable
 ---@field root src.app.drawable
 ---@field size {[1]:number, [2]:number}
 ---@field pos {[1]:number, [2]:number}
----@field default_size? {[1]:number, [2]:number}
----@field default_pos? {[1]:number, [2]:number}
+---@field default_size? {[1]:number|string, [2]:number|string}
+---@field default_pos? {[1]:number|string, [2]:number|string}
 ---@field colors? table<integer|string,string> Named colors.
 ---@field _colors? table<integer|string,lib.image.color> Real colors.
 ---@field batches? table<integer|string,love.SpriteBatch>
@@ -80,14 +85,17 @@ function drawable:update()
       local def_i = self.default_size[i]
       if type(def_i) == "string" then
         local n1, s, n2 = def_i:match(pattern)
+        n2 = tonumber(n2)
         if s == "%" then
           local prc = n1 * 0.01
-          self.size[i] = math.floor(parent.size[i] * prc)
+          n1 = math.floor(parent.size[i] * prc)
+          if n2 then
+            n1 = math.floor(n1 / n2) * n2
+          end
         elseif s == "x" then
-          self.size[i] = n1 * n2
-        else
-          self.size[i] = n1
+          n1 = n1 * n2
         end
+        self.size[i] = n1
       end
     end
   end
@@ -96,9 +104,13 @@ function drawable:update()
       local def_i = self.default_pos[i]
       if type(def_i) == "string" then
         local n1, s, n2 = def_i:match(pattern)
+        n2 = tonumber(n2)
         if s == "%" then
           local prc = n1 * 0.01
           n1 = math.floor(parent.size[i] * prc - self.size[i] * prc)
+          if n2 then
+            n1 = math.floor(n1 / n2) * n2
+          end
         elseif s == "x" then
           n1 = n1 * n2
         end
