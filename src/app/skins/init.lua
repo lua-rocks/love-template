@@ -6,8 +6,12 @@
 ---@field gui_name_to_y table<string,integer>
 ---@field gui_grids4x4 table<string,lib.image.grid>
 
-local lib_palettes = require("lib.image.palettes")
-local Grid = require("lib.image.grid")
+---@class src.app.skins-name
+---|'"red"'
+---|'"orange"'
+---|'"grass"'
+---|'"water"'
+---|'"gray"'
 
 local names = {
   "red",
@@ -16,6 +20,9 @@ local names = {
   "water",
   "gray",
 }
+
+local lib_palettes = require("lib.image.palettes")
+local Grid = require("lib.image.grid")
 
 return function()
   ---@type src.app.skins

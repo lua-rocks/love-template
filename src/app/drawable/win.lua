@@ -47,6 +47,7 @@ function win:init()
   end
   proto.new(Rect, { -- Create root node:
     parent = self,
+    content = "inside",
     pos = { "50%", "50%" },
     size = self.default_size,
     image = canvas,
@@ -71,7 +72,7 @@ function win:resize(w, h)
   )
   self.size[1] = math.floor(w / self.scale)
   self.size[2] = math.floor(h / self.scale)
-  self:update_all()
+  self:update_all_coords()
   return self
 end
 

@@ -19,6 +19,8 @@ local lg = love.graphics
 ---@field id? string
 ---@field name? string
 ---@field tags? table
+---@field content? '"wrap"'|'"expand"'|'"inside"'|'"outside"' = `"outside"`
+---@field on_draw fun(self:src.app.drawable)
 local drawable = proto.set_name({}, "src.app.drawable")
 
 ---@generic S
@@ -30,11 +32,48 @@ function drawable:init()
   table.insert(parent, self)
   self.root = self.parent.root or self
   self.pos = self.pos or { 0, 0 }
-  self.default_pos = { unpack(self.pos) }
+  self.default_pos = proto.copy(self.pos)
   if self.size then
-    self.default_size = { unpack(self.size) }
-    self.size = proto.copy(self.default_size)
+    self.default_size = proto.copy(self.size)
   end
+  self:update_colors()
+  self:update_coords()
+  return self
+end
+
+function drawable:draw()
+  if self.on_draw then
+    self:on_draw()
+  end
+  return self
+end
+
+function drawable:draw_all()
+  if self._colors and self._colors[1] then
+    lg.setColor(unpack(self._colors[1]))
+  else
+    lg.setColor(1, 1, 1)
+  end
+  self:draw()
+  local function draw_nodes()
+    for _, node in ipairs(self) do
+      node:draw_all()
+    end
+  end
+  if self.content == "inside" then
+    local x, y = unpack(self.pos)
+    local w, h = unpack(self.size)
+    local s = self.app.win.scale
+    lg.setScissor(x * s, y * s, w * s, h * s)
+    draw_nodes()
+    lg.setScissor()
+  else
+    draw_nodes()
+  end
+  return self
+end
+
+function drawable:update_colors()
   self.colors = self.colors or { "white" }
   self._colors = {}
   local pal = self.app.palettes
@@ -56,28 +95,9 @@ function drawable:init()
       end
     end
   end
-  self:update()
-  return self
 end
 
-function drawable:draw()
-  return self
-end
-
-function drawable:draw_all()
-  if self._colors and self._colors[1] then
-    lg.setColor(unpack(self._colors[1]))
-  else
-    lg.setColor(1, 1, 1)
-  end
-  self:draw()
-  for _, node in ipairs(self) do
-    node:draw_all()
-  end
-  return self
-end
-
-function drawable:update()
+function drawable:update_coords()
   local parent = self.parent
   local pattern = "(%d+)(%D*)(%d*)"
   if self.default_size then
@@ -123,10 +143,10 @@ function drawable:update()
   return self
 end
 
-function drawable:update_all()
-  self:update()
+function drawable:update_all_coords()
+  self:update_coords()
   for _, node in ipairs(self) do
-    node:update_all()
+    node:update_all_coords()
   end
   return self
 end

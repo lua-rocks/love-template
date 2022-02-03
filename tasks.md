@@ -1,15 +1,22 @@
 # Tasks
 
 - [ ] GUI
-  - [ ] **Wrap text in nodes**
+  - [ ] **Different ways to draw content in nodes**
+    - [x] Inside
+    - [x] Outside
+    - [ ] **Wrap**
+    - [ ] Expand
+  - [ ] Events
+    - [x] on_draw
+    - [ ] on_click
+    - [ ] on_hover
   - [ ] Text forms
-  - [ ] Events click and hover
   - [ ] Checkboxes
   - [ ] Dragable and dropable
     - [ ] Content scrolling
 - [ ] Server
-  - [ ] Sqlite
-  - [ ] Communication
+  - [ ] DB (sqlite?)
+  - [ ] Communication (enet?)
   - [ ] Registration
   - [ ] Authorization
 - [ ] Create new libs for love

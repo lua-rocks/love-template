@@ -17,13 +17,20 @@ function text:init()
     end
   end
   Drawable.init(self)
+  self:update()
+  return self
+end
+
+function text:update()
   self.text_object = lg_text(self.app.fonts.current, self.text)
   return self
 end
 
 function text:draw()
+  Drawable.draw(self)
   local x, y = unpack(self.pos)
   lg_draw(self.text_object, x, y)
+  return self
 end
 
 return text
