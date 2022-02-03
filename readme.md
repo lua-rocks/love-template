@@ -9,8 +9,8 @@ all because it is the key to high performance and low memory consumption, which
 I highly appreciate. So, this is not just my taste preferences, but the primary
 necessity. Some people call it "retro-style". They think the point is to try to
 make user feel nostalgic, but really, I don't care about that. All that drives
-me is the desire to write perfect code: control every pixel on the screen and
-every byte of memory!
+me is the desire to write perfect code: control every pixel on screen and every
+byte of memory!
 
 ## Features (current and planned)
 
@@ -29,6 +29,7 @@ every byte of memory!
   - [x] Very simple but powerful prototype-based OOP
   - [x] Preconfigured vscode-[debugger][]
   - [x] Advanced logging and debugging libs
+  - [x] Palette and batching helpers
   - [ ] Easy import grids and animations from [libresprite][]
 
 ## Pre-requirements
