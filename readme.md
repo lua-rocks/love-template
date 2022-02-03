@@ -2,6 +2,8 @@
 
 This project is a minimal pixel-style game template based on [LÖVE][] engine.
 
+![screenshot](res/img/examples/screenshot.png)
+
 Notice: I preferred pixel art not just because I love this style, but first of
 all because it is the key to high performance and low memory consumption, which
 I highly appreciate. So, this is not just my taste preferences, but the primary
