@@ -1,12 +1,13 @@
 # Tasks
 
 - [ ] GUI
-  - [ ] **Different ways to draw content in nodes**
+  - [x] Modify size and pos on fly
+  - [x] Different ways to draw content in nodes
     - [x] Inside
     - [x] Outside
-    - [ ] **Wrap**
-    - [ ] Expand
-  - [ ] Events
+    - [x] Expand
+    - [x] Text: Wrap
+  - [ ] **Events**
     - [x] on_draw
     - [ ] on_click
     - [ ] on_hover

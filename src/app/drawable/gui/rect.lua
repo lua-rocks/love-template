@@ -11,7 +11,12 @@ function rect:init()
     self.colors = { self.skin }
   end
   Drawable.init(self)
-  self:update_batch()
+  self:update_image()
+  return self
+end
+
+function rect:update_expand()
+  Drawable.update_expand(self)
   self:update_image()
   return self
 end
@@ -19,16 +24,13 @@ end
 function rect:update_image()
   if type(self.image) == "string" then
     self.image = lg.newImage(self.image)
+    return self
   end
-  return self
-end
-
-function rect:update_batch()
   if self.skin then
     local skins = self.app.skins
     local batch = lg.newSpriteBatch(lg.newImage(skins.gui))
     local grid = skins.gui_grids4x4[self.skin]
-    local sx, sy = self.size[1] - 4, self.size[2] - 4
+    local sx, sy = self.abs_size[1] - 4, self.abs_size[2] - 4
     batch:add(grid:get_quad(0, 0), 0, 0)
     batch:add(grid:get_quad(2, 0), sx, 0)
     batch:add(grid:get_quad(0, 2), 0, sy)
@@ -48,8 +50,8 @@ end
 
 function rect:draw()
   Drawable.draw(self)
-  local x, y = unpack(self.pos)
-  local w, h = unpack(self.size)
+  local x, y = unpack(self.abs_pos)
+  local w, h = unpack(self.abs_size)
   lg.rectangle("fill", x, y, w, h)
   if self.image then
     lg.setColor(1, 1, 1)

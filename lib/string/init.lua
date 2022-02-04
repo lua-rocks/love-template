@@ -7,7 +7,6 @@ return {
   trim = lume.trim,
   wordwrap = lume.wordwrap,
   format = lume.format,
-  trace = lume.trace,
   dostring = lume.dostring,
   uuid = lume.uuid,
   color = lume.color,

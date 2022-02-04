@@ -1,16 +1,8 @@
 # LÖVE-template (WIP)
 
-This project is a minimal pixel-style game template based on [LÖVE][] engine.
+Pixel-style game template based on [LÖVE][] engine.
 
 ![screenshot](res/img/examples/screenshot.png)
-
-Notice: I preferred pixel art not just because I love this style, but first of
-all because it is the key to high performance and low memory consumption, which
-I highly appreciate. So, this is not just my taste preferences, but the primary
-necessity. Some people call it "retro-style". They think the point is to try to
-make user feel nostalgic, but really, I don't care about that. All that drives
-me is the desire to write perfect code: control every pixel on screen and every
-byte of memory!
 
 ## Features (current and planned)
 
@@ -47,11 +39,11 @@ byte of memory!
 
 ## Agreements
 
-- Use formatters: [stylua][] for lua and [prettier][] for everything else.
-- Use [luacheck] and [lsp] for errors detection.
-- Prototypes must be named in CamelCase.
-- Other variables must be named in snake_case.
-- Start comments with capital letter and finish with dot.
+- Use formatters: [stylua][] for lua and [prettier][] for everything else
+- Use [luacheck] and [lsp] for errors detection
+- Prototypes must be named in CamelCase
+- Other variables must be named in snake_case
+- Start comments with capital letter and finish with dot
 
 [löve]: https://love2d.org
 [stylua]: https://github.com/johnnymorganz/stylua

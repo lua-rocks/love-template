@@ -1,10 +1,12 @@
-local lg_draw = love.graphics.draw
-local lg_text = love.graphics.newText
+local lg = love.graphics
 local Drawable = require("src.app.drawable")
 
+---If limit is a negative number
 ---@class src.app.drawable.gui.text:src.app.drawable
 ---@field text string
----@field text_object love.Text
+---@field wrap? boolean
+---@field align? "center"|"justify"|"left"|"right" = "left"
+---@field limit? number Wrap the line after this many horizontal pixels.
 local text = proto.link({}, Drawable, "src.app.drawable.gui.text")
 
 ---@generic S
@@ -17,19 +19,18 @@ function text:init()
     end
   end
   Drawable.init(self)
-  self:update()
-  return self
-end
-
-function text:update()
-  self.text_object = lg_text(self.app.fonts.current, self.text)
   return self
 end
 
 function text:draw()
   Drawable.draw(self)
-  local x, y = unpack(self.pos)
-  lg_draw(self.text_object, x, y)
+  local x, y = unpack(self.abs_pos)
+  if self.wrap or self.align or self.limit then
+    local limit = self.parent.abs_size[1] - self.rel_pos[1] - (self.limit or 0)
+    lg.printf(self.text, x, y, limit, self.align)
+  else
+    lg.print(self.text, x, y)
+  end
   return self
 end
 

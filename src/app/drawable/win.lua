@@ -9,19 +9,9 @@ local Rect = require("src.app.drawable.gui.rect")
 ---@field parent nil
 local win = proto.link({}, Drawable, "src.app.drawable.win")
 
----@generic S
----@param self S|src.app.drawable.win
----@return S|src.app.drawable.win self
-function win:init()
+local function make_root_node(self, w, h)
   local colors = self.app.palettes.db16_name_to_color
   lg.setBackgroundColor(colors["rock"])
-  local w, h, f = lw.getMode()
-  self.flags = f
-  self.pos = { 0, 0 }
-  self.size = { w, h }
-  self:resize(w, h)
-  w, h = f.minwidth, f.minheight
-  self.default_size = { w, h }
   local canvas = love.graphics.newCanvas(w, h)
   do -- Make background for root node:
     local scale = 8
@@ -47,11 +37,25 @@ function win:init()
   end
   proto.new(Rect, { -- Create root node:
     parent = self,
-    content = "inside",
+    closed = true,
     pos = { "50%", "50%" },
-    size = self.default_size,
+    size = self.size,
     image = canvas,
   })
+end
+
+---@generic S
+---@param self S|src.app.drawable.win
+---@return S|src.app.drawable.win self
+function win:init()
+  local w, h, f = lw.getMode()
+  self.flags = f
+  self.abs_pos = { 0, 0 }
+  self.abs_size = { w, h }
+  self:resize(w, h)
+  w, h = f.minwidth, f.minheight
+  self.size = { w, h }
+  make_root_node(self, w, h)
   return self
 end
 
@@ -70,8 +74,8 @@ function win:resize(w, h)
   self.scale = math.floor(
     math.min(w / self.flags.minwidth, h / self.flags.minheight)
   )
-  self.size[1] = math.floor(w / self.scale)
-  self.size[2] = math.floor(h / self.scale)
+  self.abs_size[1] = math.floor(w / self.scale)
+  self.abs_size[2] = math.floor(h / self.scale)
   self:update_all_coords()
   return self
 end

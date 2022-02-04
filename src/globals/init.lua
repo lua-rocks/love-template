@@ -8,4 +8,4 @@ love.graphics.setDefaultFilter("nearest", "nearest", 0)
 love.keyboard.setKeyRepeat(true)
 
 local tick = require("git.tick")
-tick.framerate = 120
+tick.framerate = 100
