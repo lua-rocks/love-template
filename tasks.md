@@ -7,10 +7,12 @@
     - [x] Outside
     - [x] Expand
     - [x] Text: Wrap
+      - [ ] Better wrap
   - [ ] **Events**
+    - [x] on_init
     - [x] on_draw
+    - [ ] **on_hover**
     - [ ] on_click
-    - [ ] on_hover
   - [ ] Text forms
   - [ ] Checkboxes
   - [ ] Dragable and dropable

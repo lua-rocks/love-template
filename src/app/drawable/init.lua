@@ -26,6 +26,8 @@ local lg = love.graphics
 ---@field expander? boolean Increase parent's size if needed.
 ---@field on_draw fun(self:src.app.drawable)
 ---@field on_init fun(self:src.app.drawable)
+---@field on_hover fun(self:src.app.drawable)
+---@field on_click fun(self:src.app.drawable)
 local drawable = proto.set_name({}, "src.app.drawable")
 
 ---@generic S
@@ -36,13 +38,20 @@ function drawable:init()
   self.app = parent.app or parent ---@type src.app
   table.insert(parent, self)
   self.root = parent.root or self
-  self.rel_pos = proto.copy(self.pos)
-  self.abs_pos = proto.copy(self.rel_pos)
+  if not self.pos then
+    self.rel_pos = { 0, 0 }
+    self.abs_pos = self.parent.abs_pos
+  else
+    self.rel_pos = proto.copy(self.pos)
+    self.abs_pos = proto.copy(self.rel_pos)
+  end
   if self.size then
     self.abs_size = proto.copy(self.size)
+  else
+    self.abs_size = { 0, 0 }
   end
   self:update_colors()
-  self:update_coords()
+  self:update_geometry()
   if self.on_init then
     self:on_init()
   end
@@ -56,7 +65,7 @@ function drawable:draw()
   return self
 end
 
-function drawable:draw_all()
+function drawable:draw_recursive()
   if self._colors and self._colors[1] then
     lg.setColor(unpack(self._colors[1]))
   else
@@ -65,7 +74,7 @@ function drawable:draw_all()
   self:draw()
   local function draw_nodes()
     for _, node in ipairs(self) do
-      node:draw_all()
+      node:draw_recursive()
     end
   end
   if self.closed then
@@ -81,26 +90,47 @@ function drawable:draw_all()
   return self
 end
 
-function drawable:update_colors()
-  self.colors = self.colors or { "white" }
-  self._colors = {}
-  local pal = self.app.palettes
-  for key, color in pairs(self.colors) do
-    if type(color) == "string" then
-      local c, swap, by = string.match(color, "(.-)([%+%-])(%d+)")
-      if c and swap and by then
-        local i = pal.db16_name_to_index[c]
-        by = tonumber(by)
-        if swap == "+" then
-          self._colors[key] = pal.db16[5 + by][i]
-        elseif swap == "-" then
-          self._colors[key] = pal.db16[5 - by][i]
-        else
-          error("wrong color")
+function drawable:update_geometry()
+  self:update_size()
+  self:update_pos()
+  self:update_expand()
+  return self
+end
+
+function drawable:update_geometry_recursive()
+  self:update_geometry()
+  for _, node in ipairs(self) do
+    node:update_geometry_recursive()
+  end
+  return self
+end
+
+function drawable:update_size()
+  if not self.size then
+    return self
+  end
+  local win = self.app.win
+  local parent = self.parent
+  for i = 1, 2 do
+    local size_i = self.size[i]
+    if type(size_i) == "string" then
+      local s1, n1, s2, n2 = size_i:match("(%D-)(%d+)(%D*)(%d*)")
+      n2 = tonumber(n2)
+      if s2 == "%" then
+        local prc = n1 * 0.01
+        n1 = math.floor(parent.abs_size[i] * prc)
+        if n2 then
+          n1 = math.floor(n1 / n2) * n2
         end
-      else
-        self._colors[key] = pal.db16_name_to_color[color]
+      elseif s2 == "x" then
+        n1 = n1 * n2
       end
+      if s1 == "-" then
+        n1 = self.parent.abs_size[i] - n1
+      end
+      self.abs_size[i] = n1
+    elseif self ~= win then
+      self.abs_size[i] = size_i
     end
   end
   return self
@@ -140,37 +170,6 @@ function drawable:update_pos()
   return self
 end
 
-function drawable:update_size()
-  if not self.size then
-    return self
-  end
-  local win = self.app.win
-  local parent = self.parent
-  for i = 1, 2 do
-    local size_i = self.size[i]
-    if type(size_i) == "string" then
-      local s1, n1, s2, n2 = size_i:match("(%D-)(%d+)(%D*)(%d*)")
-      n2 = tonumber(n2)
-      if s2 == "%" then
-        local prc = n1 * 0.01
-        n1 = math.floor(parent.abs_size[i] * prc)
-        if n2 then
-          n1 = math.floor(n1 / n2) * n2
-        end
-      elseif s2 == "x" then
-        n1 = n1 * n2
-      end
-      if s1 == "-" then
-        n1 = self.parent.abs_size[i] - n1
-      end
-      self.abs_size[i] = n1
-    elseif self ~= win then
-      self.abs_size[i] = size_i
-    end
-  end
-  return self
-end
-
 function drawable:update_expand()
   if not self.expander then
     return self
@@ -191,17 +190,27 @@ function drawable:update_expand()
   return self
 end
 
-function drawable:update_coords()
-  self:update_size()
-  self:update_pos()
-  self:update_expand()
-  return self
-end
-
-function drawable:update_all_coords()
-  self:update_coords()
-  for _, node in ipairs(self) do
-    node:update_all_coords()
+function drawable:update_colors()
+  self.colors = self.colors or { "white" }
+  self._colors = {}
+  local pal = self.app.palettes
+  for key, color in pairs(self.colors) do
+    if type(color) == "string" then
+      local c, swap, by = string.match(color, "(.-)([%+%-])(%d+)")
+      if c and swap and by then
+        local i = pal.db16_name_to_index[c]
+        by = tonumber(by)
+        if swap == "+" then
+          self._colors[key] = pal.db16[5 + by][i]
+        elseif swap == "-" then
+          self._colors[key] = pal.db16[5 - by][i]
+        else
+          error("wrong color")
+        end
+      else
+        self._colors[key] = pal.db16_name_to_color[color]
+      end
+    end
   end
   return self
 end

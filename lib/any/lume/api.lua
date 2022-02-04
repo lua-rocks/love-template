@@ -600,8 +600,11 @@ function lume.hotswap(modname) end
 --- end
 --- ```
 --- Prints "3->c", "2->b" and "1->a" on separate lines
----@param t table
----@return function, table, number
+---@generic T: table, V
+---@param t T
+---@return fun(table: V[], i?: integer):integer, V
+---@return T
+---@return integer i
 function lume.ripairs(t) end
 
 --- Takes color string `str` and returns 4 values, one for each color channel (`r`,

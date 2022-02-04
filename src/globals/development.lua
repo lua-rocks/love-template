@@ -17,7 +17,7 @@ love.keypressed = function(key)
   end
 end
 
-log.info("initialized in development mode")
+log.info("Initialized in development mode.")
 
 if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" then
   package.loaded["lldebugger"] = assert(

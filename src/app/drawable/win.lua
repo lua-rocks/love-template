@@ -7,6 +7,7 @@ local Rect = require("src.app.drawable.gui.rect")
 ---@field flags table
 ---@field scale integer
 ---@field parent nil
+---@field hovered src.app.drawable Element under mouse cursor right now.
 local win = proto.link({}, Drawable, "src.app.drawable.win")
 
 local function make_root_node(self, w, h)
@@ -35,7 +36,7 @@ local function make_root_node(self, w, h)
     lg.draw(temp_canvas)
     lg.setCanvas()
   end
-  proto.new(Rect, { -- Create root node:
+  proto.new(Rect, {
     parent = self,
     closed = true,
     pos = { "50%", "50%" },
@@ -64,8 +65,8 @@ function win:draw()
   return self
 end
 
-function win:draw_all()
-  Drawable.draw_all(self)
+function win:draw_recursive()
+  Drawable.draw_recursive(self)
 end
 
 ---@param w number
@@ -76,7 +77,7 @@ function win:resize(w, h)
   )
   self.abs_size[1] = math.floor(w / self.scale)
   self.abs_size[2] = math.floor(h / self.scale)
-  self:update_all_coords()
+  self:update_geometry_recursive()
   return self
 end
 
@@ -85,6 +86,28 @@ function win:keypressed(key)
     love.event.quit()
   end
   return self, key
+end
+
+function win:mousemoved(x, y)
+  local hovered_before = self.hovered
+  local hovered_after = self.app.stack:touch({ x / self.scale, y / self.scale })
+  if hovered_before == hovered_after then
+    return
+  end
+  if hovered_before and hovered_before.on_hover then
+    hovered_before:on_hover(false)
+  end
+  if hovered_after and hovered_after.on_hover then
+    hovered_after:on_hover(true)
+  end
+  self.hovered = hovered_after
+end
+
+function win:mousepressed(x, y, button)
+  local clicked = self.app.stack:touch({ x / self.scale, y / self.scale })
+  if clicked and clicked.on_click then
+    clicked:on_click(button)
+  end
 end
 
 return win
