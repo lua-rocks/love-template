@@ -1,0 +1,112 @@
+// www.nomnoml.com
+
+#.optional: dashed
+
+[src.app|
+  [fonts|
+    current: love.Font
+    normal: love.Font
+    bold: love.Font
+    |
+    init()
+    switch(name)
+  ]
+  [palettes|
+    db16: lib.image.palettes
+    db16x5: lib.image.palettes
+    db16_name_to_color: table
+    db16_name_to_index: table
+  ]
+  [skins|
+    gui: love.ImageData
+    gui_init_w: integer
+    gui_init_h: integer
+    gui_y_to_name: table
+    gui_name_to_y: table
+    gui_grids4x4: table
+  ]
+
+  [palettes]-/-[<package> drawable|
+    [<table>drawable|
+      app: src.app
+      parent: src.app.drawable
+      root: src.app.drawable
+      abs_size: table
+      abs_pos: table
+      rel_pos: table
+      |
+      pos?: table
+      size?: table
+      colors?: table
+      _colors?: table
+      batches?: table
+      id?: string
+      name?: string
+      tags?: table
+      closed?: boolean
+      expander?: boolean
+      ||
+      init()
+      draw()
+      draw_recursive()
+      update_geometry()
+      update_geometry_recursive()
+      update_size()
+      update_pos()
+      update_expand()
+      update_colors()
+      |
+      on_draw?()
+      on_init?()
+      on_hover?()
+      on_click?()
+    ]
+    [drawable] <- [win|
+      parent: nil
+      flags: table
+      scale: integer
+      hovered: src.app.drawable
+      |
+      init()
+      resize(w, h)
+      keypressed(key)
+      mousemoved(x, y)
+      mousepressed(x, y, button)
+    ]
+    [drawable] <- [<package>gui|
+      [rect|
+        skin?: string
+        image?: string
+        |
+        init()
+        update_expand()
+        update_image()
+        draw()
+      ]
+      [text|
+        text: string
+        |
+        text_obj?: love.Text
+        align?: string
+        limit?: number
+        |
+        init()
+        update()
+        draw()
+      ]
+    ]
+    [gui]-/-[stack|
+      push(drawable)
+      pop(element)
+      touch(point)
+    ]
+  ]
+
+  |
+  stack: src.app.drawable.stack
+  win: src.app.drawable.win
+
+  |
+  init()
+  load scene(scene)
+]

@@ -24,10 +24,10 @@ local lg = love.graphics
 ---@field tags? string[]
 ---@field closed? boolean Keep content in bounds.
 ---@field expander? boolean Increase parent's size if needed.
----@field on_draw fun(self:src.app.drawable)
----@field on_init fun(self:src.app.drawable)
----@field on_hover fun(self:src.app.drawable)
----@field on_click fun(self:src.app.drawable)
+---@field on_draw? fun(self:src.app.drawable)
+---@field on_init? fun(self:src.app.drawable)
+---@field on_hover? fun(self:src.app.drawable)
+---@field on_click? fun(self:src.app.drawable)
 local drawable = proto.set_name({}, "src.app.drawable")
 
 ---@generic S

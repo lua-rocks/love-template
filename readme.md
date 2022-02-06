@@ -28,7 +28,8 @@ Pixel-style game template based on [LÖVE][] engine.
 
 - love >11
 - lua >5 or luajit >2
-- luarocks >3
+- luarocks >3 (for `luacheck`)
+- npm > 8 (for `noml`)
 
 ## Installation
 
@@ -52,3 +53,7 @@ Pixel-style game template based on [LÖVE][] engine.
 [lsp]: https://github.com/sumneko/lua-language-server
 [debugger]: https://github.com/tomblind/local-lua-debugger-vscode
 [libresprite]: https://libresprite.github.io
+
+## Structure
+
+![src.app](uml/app.svg)

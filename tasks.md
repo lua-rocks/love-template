@@ -8,12 +8,19 @@
     - [x] Expand
     - [x] Text: Wrap
       - [ ] Better wrap
-  - [ ] **Events**
-    - [x] on_init
-    - [x] on_draw
-    - [ ] **on_hover**
-    - [ ] on_click
-  - [ ] Text forms
+  - [x] Events
+    - [x] `on_init`
+    - [x] `on_draw`
+    - [x] `on_hover`
+    - [x] `on_click`
+    - [ ] More events
+    - [ ] Use `stack.pop()`
+  - [ ] **Optimize palettes**
+    - All coloring options should be drawn directly on the atlas, because:
+      1. Auto-expanding atlas size or adding layers is inconvenient and
+         problematic.
+      2. This solution is not only easier, but also faster and more efficient.
+  - [ ] **Text forms**
   - [ ] Checkboxes
   - [ ] Dragable and dropable
     - [ ] Content scrolling
