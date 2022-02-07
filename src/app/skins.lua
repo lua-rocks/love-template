@@ -1,44 +1,46 @@
-local names = {
-  "red",
-  "orange",
-  "grass",
-  "water",
-  "gray",
-  "wood",
-  "wood_out",
-  "wood_in",
-}
-
-local lib_palettes = require("lib.image.palettes")
-local Grid = require("lib.image.grid")
+local Skin = require("src.app.drawable.skin")
+local palettes = require("lib.image.palettes")
+local li = love.image
+local lg = love.graphics
 
 ---@class src.app.skins
----@field gui love.ImageData
----@field gui_init_w integer
----@field gui_init_h integer
----@field gui_y_to_name table<integer,string>
----@field gui_name_to_y table<string,integer>
----@field gui_grids4x4 table<string,lib.image.grid>
-local skins = {
-  gui_y_to_name = {},
-  gui_name_to_y = {},
-  gui_grids4x4 = {},
-}
+---@field gui src.app.drawable.skin
+---@field mc_gui_rect src.app.drawable.skin
+local skins = proto.set_name({}, "src.app.skins")
 
-local imgdata = love.image.newImageData("res/img/skins/gui.png")
-local gui_init_w, gui_init_h = imgdata:getDimensions()
-local x5 = lib_palettes.load("res/img/palettes/db16/db16x5.png")
-skins.gui = lib_palettes.apply(imgdata, x5[1], x5)
-for index, name in ipairs(names) do
-  local y = (index - 1) * gui_init_h
-  skins.gui_y_to_name[y] = name
-  skins.gui_name_to_y[name] = y
-  skins.gui_grids4x4[name] = proto.new(Grid, {
-    grid_pos = { 0, y },
-    image_size = { skins.gui:getDimensions() },
-    quad_size = { 4, 4 },
-  })
+---@param pals src.app.palettes
+function skins:init(pals)
+  self.gui = proto.new(Skin, { atlas = "res/img/skins/gui.png" })
+  local c = pals.name_to_color
+  local sub_colors = {
+    { c.white, c.pink, c.red, c.brown, c.black },
+    { c.white, c.yellow, c.orange, c.wood, c.black },
+    { c.white, c.yellow, c.grass, c.green, c.black },
+    { c.white, c.cyan, c.water, c.blue, c.black },
+    { c.white, c.silver, c.gray, c.rock, c.black },
+    { c.yellow, c.orange, c.wood, c.brown, c.black },
+  }
+  local sub_names = {
+    "red",
+    "orange",
+    "grass",
+    "water",
+    "gray",
+    "wood",
+  }
+  local imgdata = li.newImageData(12, 12)
+  local from = li.newImageData("res/img/skins/gui.png")
+  imgdata:paste(from, 0, 0, 0, 0, 12, 12)
+  imgdata = palettes.apply(imgdata, sub_colors[1], sub_colors)
+  local marks = {}
+  for index, name in ipairs(sub_names) do
+    marks[name] = { 0, (index - 1) * 12 }
+  end
+  self.mc_gui_rect = proto.new(
+    Skin,
+    { atlas = lg.newImage(imgdata), marks = marks }
+  )
+  return self
 end
-skins.gui_init_w, skins.gui_init_h = gui_init_w, gui_init_h
 
 return skins

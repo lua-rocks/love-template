@@ -1,7 +1,6 @@
 # Tasks
 
 - [ ] **Optimize structure**
-  - [ ] **Skins**
 - [ ] **Make good font**
 - [ ] GUI
   - [x] Modify size and pos on fly

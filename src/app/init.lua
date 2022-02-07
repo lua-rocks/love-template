@@ -11,7 +11,7 @@ local app = proto.set_name({}, "src.app")
 ---@return S|src.app self
 function app:init()
   self.palettes = require("src.app.palettes")
-  self.skins = require("src.app.skins")
+  self.skins = require("src.app.skins"):init(self.palettes)
   self.win = require("src.app.drawable.win")
   self.win.app = self
   self.win:init()

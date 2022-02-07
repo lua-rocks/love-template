@@ -81,8 +81,13 @@
       pop(element)
       touch(point)
     ]
-    [drawable] -/- [<wip>skin|
-      size:table
+    [drawable] -/- [skin|
+      atlas
+      |
+      grid?: lib.image.grid
+      marks?: table
+      |
+      init()
     ]
   ]
 
@@ -100,7 +105,8 @@
     name_to_index: table
     names: table
   ]
-  [drawable] -/- [<wip>skins|
+  [drawable] -/- [skins|
     gui: src.app.drawable.skin
+    mc_gui_rect: src.app.drawable.skin
   ]
 ]

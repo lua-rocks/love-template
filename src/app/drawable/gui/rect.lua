@@ -27,9 +27,10 @@ function rect:update_image()
     return self
   end
   if self.skin then
-    local skins = self.app.skins
-    local batch = lg.newSpriteBatch(lg.newImage(skins.gui))
-    local grid = skins.gui_grids4x4[self.skin]
+    local skin = self.app.skins.mc_gui_rect
+    local batch = lg.newSpriteBatch(skin.atlas)
+    local grid = skin.grid
+    grid.grid_pos = skin.marks[self.skin]
     local sx, sy = self.abs_size[1] - 4, self.abs_size[2] - 4
     batch:add(grid:get_quad(0, 0), 0, 0)
     batch:add(grid:get_quad(2, 0), sx, 0)
