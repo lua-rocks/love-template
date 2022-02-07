@@ -94,11 +94,11 @@
     init()
     switch(name)
   ]
-  [drawable] -/- [<wip>palettes|
-    db16: lib.image.palettes
-    db16x5: lib.image.palettes
-    db16_name_to_color: table
-    db16_name_to_index: table
+  [drawable] -/- [palettes|
+    main: lib.image.palette
+    name_to_color: table
+    name_to_index: table
+    names: table
   ]
   [drawable] -/- [<wip>skins|
     gui: src.app.drawable.skin

@@ -194,17 +194,17 @@ function drawable:update_colors()
     if type(color) == "string" then
       local c, swap, by = string.match(color, "(.-)([%+%-])(%d+)")
       if c and swap and by then
-        local i = pal.db16_name_to_index[c]
+        local i = pal.name_to_index[c]
         by = tonumber(by)
         if swap == "+" then
-          self.abs_colors[key] = pal.db16[5 + by][i]
+          self.abs_colors[key] = pal[5 + by][i]
         elseif swap == "-" then
-          self.abs_colors[key] = pal.db16[5 - by][i]
+          self.abs_colors[key] = pal[5 - by][i]
         else
           error("wrong color")
         end
       else
-        self.abs_colors[key] = pal.db16_name_to_color[color]
+        self.abs_colors[key] = pal.name_to_color[color]
       end
     end
   end

@@ -1,4 +1,18 @@
-local names = {
+---@class src.app.palettes
+---@field main lib.image.palette
+---@field name_to_color table<string,lib.image.color>
+---@field name_to_index table<string,integer>
+---@field names string[]
+
+---@type src.app.palettes|lib.image.palettes
+local palettes = require("lib.image.palettes.load")(
+  "res/img/palettes/db16/db16.png"
+)
+
+palettes.main = palettes[5]
+palettes.name_to_color = {}
+palettes.name_to_index = {}
+palettes.names = {
   "white",
   "silver",
   "gray",
@@ -17,24 +31,9 @@ local names = {
   "black",
 }
 
-local lib_palettes = require("lib.image.palettes")
-
----@class src.app.palettes
----@field db16 lib.image.palettes
----@field db16x5 lib.image.palettes
----@field db16_name_to_color table<string,lib.image.color>
----@field db16_name_to_index table<string,integer>
-local palettes = {
-  db16_name_to_color = {},
-  db16_name_to_index = {},
-}
-
-local dir = "res/img/palettes/db16/"
-palettes.db16 = lib_palettes.load(dir .. "db16.png")
-palettes.db16x5 = lib_palettes.load(dir .. "db16x5.png")
-for index, name in ipairs(names) do
-  palettes.db16_name_to_color[name] = palettes.db16[5][index]
-  palettes.db16_name_to_index[name] = index
+for index, name in ipairs(palettes.names) do
+  palettes.name_to_color[name] = palettes.main[index]
+  palettes.name_to_index[name] = index
 end
 
 return palettes

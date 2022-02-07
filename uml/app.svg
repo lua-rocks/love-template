@@ -1,4 +1,4 @@
-<svg version="1.1" baseProfile="full" width="867.5" height="1306" viewbox="0 0 867.5 1306" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" style="font:normal  12pt Helvetica, Helvetica, sans-serif;;stroke-linejoin:round;stroke-linecap:round">
+<svg version="1.1" baseProfile="full" width="860" height="1306" viewbox="0 0 860 1306" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" style="font:normal  12pt Helvetica, Helvetica, sans-serif;;stroke-linejoin:round;stroke-linecap:round">
   <desc >// www.nomnoml.com
 
 #.wip: fill=#D2AA99 title=bold dashed
@@ -95,23 +95,23 @@
     init()
     switch(name)
   ]
-  [drawable] -/- [&lt;wip&gt;palettes|
-    db16: lib.image.palettes
-    db16x5: lib.image.palettes
-    db16_name_to_color: table
-    db16_name_to_index: table
+  [drawable] -/- [palettes|
+    main: lib.image.palette
+    name_to_color: table
+    name_to_index: table
+    names: table
   ]
   [drawable] -/- [&lt;wip&gt;skins|
     gui: src.app.drawable.skin
   ]
 ]
 </desc>
-  <rect x="0" y="0" height="1306" width="867.5" style="stroke:none; fill:transparent;"></rect>
-  <rect x="28.5" y="28.5" height="1250" width="811.5" data-name="src.app" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
-  <path d="M28.5 59.5 L840 59.5" data-name="src.app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M28.5 150.5 L840 150.5" data-name="src.app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M28.5 196.5 L840 196.5" data-name="src.app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <text x="434.3" y="50" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="src.app">src.app</text>
+  <rect x="0" y="0" height="1306" width="860" style="stroke:none; fill:transparent;"></rect>
+  <rect x="28.5" y="28.5" height="1250" width="804" data-name="src.app" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M28.5 59.5 L832.5 59.5" data-name="src.app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M28.5 150.5 L832.5 150.5" data-name="src.app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M28.5 196.5 L832.5 196.5" data-name="src.app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="430.5" y="50" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="src.app">src.app</text>
   <text x="36.5" y="81" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="src.app">stack: src.app.drawable.stack</text>
   <text x="36.5" y="96" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="src.app">win: src.app.drawable.win</text>
   <text x="36.5" y="111" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="src.app">palettes: src.app.palettes</text>
@@ -119,15 +119,15 @@
   <text x="36.5" y="141" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="src.app">fonts: src.app.fonts</text>
   <text x="36.5" y="172" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="src.app">init()</text>
   <text x="36.5" y="187" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="src.app">load_scene(scene)</text>
-  <rect x="117.5" y="1112.5" height="138" width="155" data-name="fonts" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
-  <path d="M117.5 1143.5 L272.5 1143.5" data-name="fonts" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M117.5 1204.5 L272.5 1204.5" data-name="fonts" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <text x="195" y="1134" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="fonts">fonts</text>
-  <text x="125.5" y="1165" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">current: love.Font</text>
-  <text x="125.5" y="1180" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">normal: love.Font</text>
-  <text x="125.5" y="1195" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">bold: love.Font</text>
-  <text x="125.5" y="1226" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">init()</text>
-  <text x="125.5" y="1241" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">switch(name)</text>
+  <rect x="138.5" y="1112.5" height="138" width="155" data-name="fonts" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M138.5 1143.5 L293.5 1143.5" data-name="fonts" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M138.5 1204.5 L293.5 1204.5" data-name="fonts" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="216" y="1134" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="fonts">fonts</text>
+  <text x="146.5" y="1165" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">current: love.Font</text>
+  <text x="146.5" y="1180" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">normal: love.Font</text>
+  <text x="146.5" y="1195" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">bold: love.Font</text>
+  <text x="146.5" y="1226" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">init()</text>
+  <text x="146.5" y="1241" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">switch(name)</text>
   <rect x="56.5" y="255.5" height="817" width="748" data-name="drawable" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
   <path d="M56.5 255.5 L56.5 224.5 L144.5 224.5 L144.5 255.5 Z" data-name="drawable" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></path>
   <path d="M56.5 255.5 L804.5 255.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
@@ -216,15 +216,15 @@
   <path d="M415.5 998.5 L507.5 998.5" data-name="skin" style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
   <text x="461.5" y="989" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="skin">skin</text>
   <text x="423.5" y="1020" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">size:table</text>
-  <rect x="312.5" y="1128.5" height="107" width="237" data-name="palettes" style="stroke:#33322E;fill:#D2AA99;stroke-dasharray:6 6;stroke-width:3;"></rect>
-  <path d="M312.5 1159.5 L549.5 1159.5" data-name="palettes" style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
-  <text x="431" y="1150" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="palettes">palettes</text>
-  <text x="320.5" y="1181" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="palettes">db16: lib.image.palettes</text>
-  <text x="320.5" y="1196" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="palettes">db16x5: lib.image.palettes</text>
-  <text x="320.5" y="1211" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="palettes">db16_name_to_color: table</text>
-  <text x="320.5" y="1226" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="palettes">db16_name_to_index: table</text>
-  <rect x="589.5" y="1150.5" height="62" width="223" data-name="skins" style="stroke:#33322E;fill:#D2AA99;stroke-dasharray:6 6;stroke-width:3;"></rect>
-  <path d="M589.5 1181.5 L812.5 1181.5" data-name="skins" style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
-  <text x="701" y="1172" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="skins">skins</text>
-  <text x="597.5" y="1203" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skins">gui: src.app.drawable.skin</text>
+  <rect x="333.5" y="1128.5" height="107" width="194" data-name="palettes" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M333.5 1159.5 L527.5 1159.5" data-name="palettes" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="430.5" y="1150" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="palettes">palettes</text>
+  <text x="341.5" y="1181" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="palettes">main: lib.image.palette</text>
+  <text x="341.5" y="1196" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="palettes">name_to_color: table</text>
+  <text x="341.5" y="1211" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="palettes">name_to_index: table</text>
+  <text x="341.5" y="1226" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="palettes">names: table</text>
+  <rect x="567.5" y="1150.5" height="62" width="223" data-name="skins" style="stroke:#33322E;fill:#D2AA99;stroke-dasharray:6 6;stroke-width:3;"></rect>
+  <path d="M567.5 1181.5 L790.5 1181.5" data-name="skins" style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
+  <text x="679" y="1172" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="skins">skins</text>
+  <text x="575.5" y="1203" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skins">gui: src.app.drawable.skin</text>
 </svg>

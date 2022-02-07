@@ -11,7 +11,7 @@ local Rect = require("src.app.drawable.gui.rect")
 local win = proto.link({}, Drawable, "src.app.drawable.win")
 
 local function make_root_node(self, w, h)
-  local colors = self.app.palettes.db16_name_to_color
+  local colors = self.app.palettes.name_to_color
   lg.setBackgroundColor(colors["rock"])
   local canvas = love.graphics.newCanvas(w, h)
   do -- Make background for root node:
