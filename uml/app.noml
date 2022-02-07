@@ -1,32 +1,18 @@
 // www.nomnoml.com
 
-#.optional: dashed
+#.wip: fill=#D2AA99 title=bold dashed
 
 [src.app|
-  [fonts|
-    current: love.Font
-    normal: love.Font
-    bold: love.Font
-    |
-    init()
-    switch(name)
-  ]
-  [palettes|
-    db16: lib.image.palettes
-    db16x5: lib.image.palettes
-    db16_name_to_color: table
-    db16_name_to_index: table
-  ]
-  [skins|
-    gui: love.ImageData
-    gui_init_w: integer
-    gui_init_h: integer
-    gui_y_to_name: table
-    gui_name_to_y: table
-    gui_grids4x4: table
-  ]
-
-  [palettes]-/-[<package> drawable|
+  stack: src.app.drawable.stack
+  win: src.app.drawable.win
+  palettes: src.app.palettes
+  skins: src.app.skins
+  fonts: src.app.fonts
+  |
+  init()
+  load_scene(scene)
+  |
+  [<package> drawable|
     [<table>drawable|
       app: src.app
       parent: src.app.drawable
@@ -38,11 +24,7 @@
       pos?: table
       size?: table
       colors?: table
-      _colors?: table
-      batches?: table
-      id?: string
-      name?: string
-      tags?: table
+      abs_colors?: table
       closed?: boolean
       expander?: boolean
       ||
@@ -61,7 +43,7 @@
       on_hover?()
       on_click?()
     ]
-    [drawable] <- [win|
+    [win|
       parent: nil
       flags: table
       scale: integer
@@ -72,41 +54,53 @@
       keypressed(key)
       mousemoved(x, y)
       mousepressed(x, y, button)
-    ]
-    [drawable] <- [<package>gui|
+    ] -> [drawable]
+    [<package>gui|
       [rect|
-        skin?: string
-        image?: string
+        skin?
+        image?
         |
         init()
         update_expand()
         update_image()
         draw()
       ]
-      [text|
+      [<wip>text|
         text: string
         |
         text_obj?: love.Text
-        align?: string
-        limit?: number
+        wrap?: boolean
         |
         init()
         update()
         draw()
       ]
-    ]
-    [gui]-/-[stack|
+    ] -> [drawable]
+    [drawable] -/- [stack|
       push(drawable)
       pop(element)
       touch(point)
     ]
+    [drawable] -/- [<wip>skin|
+      size:table
+    ]
   ]
 
-  |
-  stack: src.app.drawable.stack
-  win: src.app.drawable.win
-
-  |
-  init()
-  load scene(scene)
+  [drawable] -/- [fonts|
+    current: love.Font
+    normal: love.Font
+    bold: love.Font
+    |
+    init()
+    switch(name)
+  ]
+  [drawable] -/- [<wip>palettes|
+    db16: lib.image.palettes
+    db16x5: lib.image.palettes
+    db16_name_to_color: table
+    db16_name_to_index: table
+  ]
+  [drawable] -/- [<wip>skins|
+    gui: src.app.drawable.skin
+  ]
 ]

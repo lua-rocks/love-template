@@ -24,12 +24,12 @@ Pixel-style game template based on [LÖVE][] engine.
   - [x] Palette and batching helpers
   - [ ] Easy import grids and animations from [libresprite][]
 
-## Pre-requirements
+## Dependencies
 
 - love >11
-- lua >5 or luajit >2
+- lua >5 or luajit >2 (for run tasks)
 - luarocks >3 (for `luacheck`)
-- npm > 8 (for `noml`)
+- npm > 8 (for `nomnoml`)
 
 ## Installation
 

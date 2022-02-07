@@ -17,11 +17,7 @@ local lg = love.graphics
 ---@field pos? {[1]:number|string, [2]:number|string}
 ---@field size? {[1]:number|string, [2]:number|string}
 ---@field colors? table<integer|string,string> Named colors.
----@field _colors? table<integer|string,lib.image.color> Real colors.
----@field batches? table<integer|string,love.SpriteBatch>
----@field id? string
----@field name? string
----@field tags? string[]
+---@field abs_colors? table<integer|string,lib.image.color> Real colors.
 ---@field closed? boolean Keep content in bounds.
 ---@field expander? boolean Increase parent's size if needed.
 ---@field on_draw? fun(self:src.app.drawable)
@@ -66,8 +62,8 @@ function drawable:draw()
 end
 
 function drawable:draw_recursive()
-  if self._colors and self._colors[1] then
-    lg.setColor(unpack(self._colors[1]))
+  if self.abs_colors and self.abs_colors[1] then
+    lg.setColor(unpack(self.abs_colors[1]))
   else
     lg.setColor(1, 1, 1)
   end
@@ -192,7 +188,7 @@ end
 
 function drawable:update_colors()
   self.colors = self.colors or { "white" }
-  self._colors = {}
+  self.abs_colors = {}
   local pal = self.app.palettes
   for key, color in pairs(self.colors) do
     if type(color) == "string" then
@@ -201,14 +197,14 @@ function drawable:update_colors()
         local i = pal.db16_name_to_index[c]
         by = tonumber(by)
         if swap == "+" then
-          self._colors[key] = pal.db16[5 + by][i]
+          self.abs_colors[key] = pal.db16[5 + by][i]
         elseif swap == "-" then
-          self._colors[key] = pal.db16[5 - by][i]
+          self.abs_colors[key] = pal.db16[5 - by][i]
         else
           error("wrong color")
         end
       else
-        self._colors[key] = pal.db16_name_to_color[color]
+        self.abs_colors[key] = pal.db16_name_to_color[color]
       end
     end
   end
