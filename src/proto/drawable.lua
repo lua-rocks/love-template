@@ -24,12 +24,12 @@ local lg = love.graphics
 ---@field on_init? fun(self:src.proto.drawable)
 ---@field on_hover? fun(self:src.proto.drawable)
 ---@field on_click? fun(self:src.proto.drawable)
-local drawable = proto.set_name({}, "src.proto.drawable")
+local Drawable = proto.set_name({}, "src.proto.drawable")
 
 ---@generic S
 ---@param self S|src.proto.drawable
 ---@return S|src.proto.drawable self
-function drawable:init()
+function Drawable:init()
   local parent = self.parent
   self.app = parent.app or parent ---@type src.app
   table.insert(parent, self)
@@ -54,14 +54,14 @@ function drawable:init()
   return self
 end
 
-function drawable:draw()
+function Drawable:draw()
   if self.on_draw then
     self:on_draw()
   end
   return self
 end
 
-function drawable:draw_recursive()
+function Drawable:draw_recursive()
   if self.abs_colors and self.abs_colors[1] then
     lg.setColor(unpack(self.abs_colors[1]))
   else
@@ -86,14 +86,14 @@ function drawable:draw_recursive()
   return self
 end
 
-function drawable:update_geometry()
+function Drawable:update_geometry()
   self:update_size()
   self:update_pos()
   self:update_expand()
   return self
 end
 
-function drawable:update_geometry_recursive()
+function Drawable:update_geometry_recursive()
   self:update_geometry()
   for _, node in ipairs(self) do
     node:update_geometry_recursive()
@@ -101,7 +101,7 @@ function drawable:update_geometry_recursive()
   return self
 end
 
-function drawable:update_size()
+function Drawable:update_size()
   if not self.size then
     return self
   end
@@ -132,7 +132,7 @@ function drawable:update_size()
   return self
 end
 
-function drawable:update_pos()
+function Drawable:update_pos()
   if not self.pos then
     return self
   end
@@ -166,7 +166,7 @@ function drawable:update_pos()
   return self
 end
 
-function drawable:update_expand()
+function Drawable:update_expand()
   if not self.expander then
     return self
   end
@@ -186,7 +186,7 @@ function drawable:update_expand()
   return self
 end
 
-function drawable:update_colors()
+function Drawable:update_colors()
   self.colors = self.colors or { "white" }
   self.abs_colors = {}
   local pal = self.app.palettes
@@ -211,4 +211,4 @@ function drawable:update_colors()
   return self
 end
 
-return drawable
+return Drawable

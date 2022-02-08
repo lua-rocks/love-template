@@ -1,7 +1,7 @@
 <svg version="1.1" baseProfile="full" width="827" height="1525" viewbox="0 0 827 1525" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" style="font:bold  12pt Helvetica, Helvetica, sans-serif;;stroke-linejoin:round;stroke-linecap:round">
   <desc >// www.nomnoml.com
 
-#.wip: fill=#D2AA99 title=bold dashed
+#.wip: fill=#D2AA99 title=bold
 
 [&lt;package&gt; src|
   [app|
@@ -209,10 +209,10 @@
   <text x="247.5" y="804" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">grid?: lib.image.grid</text>
   <text x="247.5" y="819" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">marks?: table</text>
   <text x="247.5" y="850" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">init()</text>
-  <rect x="429.5" y="1272.5" height="169" width="171" data-name="text" style="stroke:#33322E;fill:#D2AA99;stroke-dasharray:6 6;stroke-width:3;"></rect>
-  <path d="M429.5 1303.5 L600.5 1303.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
-  <path d="M429.5 1334.5 L600.5 1334.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
-  <path d="M429.5 1380.5 L600.5 1380.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
+  <rect x="429.5" y="1272.5" height="169" width="171" data-name="text" style="stroke:#33322E;fill:#D2AA99;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M429.5 1303.5 L600.5 1303.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M429.5 1334.5 L600.5 1334.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M429.5 1380.5 L600.5 1380.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
   <text x="515" y="1294" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="text">text</text>
   <text x="437.5" y="1325" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">text: string</text>
   <text x="437.5" y="1356" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">text_obj?: love.Text</text>

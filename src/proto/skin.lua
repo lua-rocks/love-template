@@ -12,9 +12,9 @@ local Grid = require("lib.image.grid")
 ---@field atlas love.Drawable|string
 ---@field grid? lib.image.grid
 ---@field marks? table<any, { [1]:integer, [2]:integer }>
-local skin = proto.set_name({}, "src.proto.skin")
+local Skin = proto.set_name({}, "src.proto.skin")
 
-function skin:init()
+function Skin:init()
   if type(self.atlas) == "string" then
     self.atlas = lg.newImage(self.atlas)
   end
@@ -24,4 +24,4 @@ function skin:init()
   return self
 end
 
-return skin
+return Skin

@@ -1,6 +1,6 @@
 // www.nomnoml.com
 
-#.wip: fill=#D2AA99 title=bold dashed
+#.wip: fill=#D2AA99 title=bold
 
 [<package> src|
   [app|

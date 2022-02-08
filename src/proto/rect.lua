@@ -4,9 +4,9 @@ local Drawable = require("src.proto.drawable")
 ---@class src.proto.rect:src.proto.drawable
 ---@field skin? string|src.app.skins-name
 ---@field image? love.Drawable|string
-local rect = proto.link({}, Drawable, "src.proto.rect")
+local Rect = proto.link({}, Drawable, "src.proto.rect")
 
-function rect:init()
+function Rect:init()
   if self.skin and not self.colors then
     self.colors = { self.skin }
   end
@@ -15,13 +15,13 @@ function rect:init()
   return self
 end
 
-function rect:update_expand()
+function Rect:update_expand()
   Drawable.update_expand(self)
   self:update_image()
   return self
 end
 
-function rect:update_image()
+function Rect:update_image()
   if type(self.image) == "string" then
     self.image = lg.newImage(self.image)
     return self
@@ -49,7 +49,7 @@ function rect:update_image()
   return self
 end
 
-function rect:draw()
+function Rect:draw()
   Drawable.draw(self)
   local x, y = unpack(self.abs_pos)
   local w, h = unpack(self.abs_size)
@@ -61,4 +61,4 @@ function rect:draw()
   return self
 end
 
-return rect
+return Rect
