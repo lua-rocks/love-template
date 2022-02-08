@@ -2,7 +2,7 @@ local lg = love.graphics
 local Drawable = require("src.proto.drawable")
 
 ---@class src.proto.rect:src.proto.drawable
----@field skin? string|src.app.skins-name
+---@field skin? string
 ---@field image? love.Drawable|string
 local Rect = proto.link({}, Drawable, "src.proto.rect")
 
@@ -28,7 +28,7 @@ function Rect:update_image()
   end
   if self.skin then
     local skin = self.app.skins.mc_gui_rect
-    local batch = lg.newSpriteBatch(skin.atlas)
+    local batch = lg.newSpriteBatch(skin.image)
     local grid = skin.grid
     grid.grid_pos = skin.marks[self.skin]
     local sx, sy = self.abs_size[1] - 4, self.abs_size[2] - 4

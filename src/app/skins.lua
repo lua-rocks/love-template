@@ -1,7 +1,4 @@
 local Skin = require("src.proto.skin")
-local palettes = require("lib.image.palettes")
-local li = love.image
-local lg = love.graphics
 
 ---@class src.app.skins
 ---@field gui src.proto.skin All GUI.
@@ -10,7 +7,7 @@ local skins = proto.set_name({}, "src.app.skins")
 
 ---@param pals src.app.palettes
 function skins:init(pals)
-  self.gui = proto.new(Skin, { atlas = "res/img/skins/gui.png" })
+  self.gui = proto.new(Skin, { file = "res/img/skins/gui.png" })
   local c = pals.name_to_color
   local sub_colors = {
     { c.white, c.pink, c.red, c.brown, c.black },
@@ -28,17 +25,12 @@ function skins:init(pals)
     "gray",
     "wood",
   }
-  local imgdata = li.newImageData(12, 12)
-  local from = li.newImageData("res/img/skins/gui.png")
-  imgdata:paste(from, 0, 0, 0, 0, 12, 12)
-  imgdata = palettes.apply(imgdata, sub_colors[1], sub_colors)
-  local marks = {}
-  for index, name in ipairs(sub_names) do
-    marks[name] = { 0, (index - 1) * 12 }
-  end
-  self.mc_gui_rect = proto.new(
-    Skin,
-    { atlas = lg.newImage(imgdata), marks = marks }
+  self.mc_gui_rect = self.gui:recolor_part(
+    { 0, 0 },
+    { 2, 2 },
+    sub_colors[1],
+    sub_colors,
+    sub_names
   )
   return self
 end
