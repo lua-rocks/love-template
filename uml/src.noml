@@ -39,6 +39,7 @@
       keypressed(key)
       mousemoved(x, y)
       mousepressed(x, y, button)
+      load_view(view)
     ]
     [win] -> [<reference> src.proto.drawable]
   ]

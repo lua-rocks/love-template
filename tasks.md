@@ -2,6 +2,8 @@
 
 - [x] Optimize structure
 - [ ] **Make good font**
+  - [ ] It must be monospace
+  - [ ] It would be cool if it were multicolor
 - [ ] GUI
   - [x] Modify size and pos on fly
   - [x] Different ways to draw content in nodes

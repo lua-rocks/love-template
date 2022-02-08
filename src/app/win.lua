@@ -54,6 +54,8 @@ function win:init()
   w, h = f.minwidth, f.minheight
   self.size = { w, h }
   make_root_node(self, w, h)
+  self:load_view("main")
+  self:update_geometry_recursive()
   return self
 end
 

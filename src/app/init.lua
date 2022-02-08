@@ -13,7 +13,7 @@ function app:init()
   self.stack = require("src.app.stack")
   self.win = require("src.app.win")
   self.win.app = self
-  self.win:init():load_view("main")
+  self.win:init()
   return self
 end
 

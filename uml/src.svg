@@ -1,4 +1,4 @@
-<svg version="1.1" baseProfile="full" width="827" height="1525" viewbox="0 0 827 1525" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" style="font:bold  12pt Helvetica, Helvetica, sans-serif;;stroke-linejoin:round;stroke-linecap:round">
+<svg version="1.1" baseProfile="full" width="827" height="1540" viewbox="0 0 827 1540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" style="font:bold  12pt Helvetica, Helvetica, sans-serif;;stroke-linejoin:round;stroke-linecap:round">
   <desc >// www.nomnoml.com
 
 #.wip: fill=#D2AA99 title=bold
@@ -40,6 +40,7 @@
       keypressed(key)
       mousemoved(x, y)
       mousepressed(x, y, button)
+      load_view(view)
     ]
     [win] -&gt; [&lt;reference&gt; src.proto.drawable]
   ]
@@ -105,16 +106,16 @@
   ]
 ]
 </desc>
-  <rect x="0" y="0" height="1525" width="827" style="stroke:none; fill:transparent;"></rect>
-  <rect x="28.5" y="59.5" height="1438" width="771" data-name="src" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <rect x="0" y="0" height="1540" width="827" style="stroke:none; fill:transparent;"></rect>
+  <rect x="28.5" y="59.5" height="1453" width="771" data-name="src" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
   <path d="M28.5 59.5 L28.5 28.5 L68.5 28.5 L68.5 59.5 Z" data-name="src" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></path>
   <path d="M28.5 59.5 L799.5 59.5" data-name="src" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
   <text x="36.5" y="50" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="src">src</text>
-  <rect x="56.5" y="87.5" height="534" width="715" data-name="app" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
+  <rect x="56.5" y="87.5" height="549" width="715" data-name="app" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
   <path d="M56.5 118.5 L771.5 118.5" data-name="app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
   <text x="414" y="109" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="app">app</text>
-  <path d="M262.3 522.5 L262.3 542.5 L262.3 555.8 L262.3 555.8 " data-name="app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M256.9 549.2 L262.3 555.8 L267.6 549.2 L262.3 562.5 Z" data-name="app" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M262.3 537.5 L262.3 557.5 L262.3 570.8 L262.3 570.8 " data-name="app" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M256.9 564.2 L262.3 570.8 L267.6 564.2 L262.3 577.5 Z" data-name="app" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
   <rect x="84.5" y="146.5" height="138" width="155" data-name="fonts" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
   <path d="M84.5 177.5 L239.5 177.5" data-name="fonts" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
   <path d="M84.5 238.5 L239.5 238.5" data-name="fonts" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
@@ -124,7 +125,7 @@
   <text x="92.5" y="229" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">bold: love.Font</text>
   <text x="92.5" y="260" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">init()</text>
   <text x="92.5" y="275" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="fonts">switch(name)</text>
-  <rect x="143.5" y="324.5" height="198" width="238" data-name="win" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <rect x="143.5" y="324.5" height="213" width="238" data-name="win" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
   <path d="M143.5 355.5 L381.5 355.5" data-name="win" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
   <path d="M143.5 431.5 L381.5 431.5" data-name="win" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
   <text x="262.5" y="346" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="win">win</text>
@@ -137,6 +138,7 @@
   <text x="151.5" y="483" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="win">keypressed(key)</text>
   <text x="151.5" y="498" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="win">mousemoved(x, y)</text>
   <text x="151.5" y="513" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="win">mousepressed(x, y, button)</text>
+  <text x="151.5" y="528" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="win">load_view(view)</text>
   <rect x="279.5" y="162.5" height="107" width="194" data-name="palettes" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
   <path d="M279.5 193.5 L473.5 193.5" data-name="palettes" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
   <text x="376.5" y="184" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="palettes">palettes</text>
@@ -150,86 +152,86 @@
   <text x="521.5" y="222" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skins">gui: src.proto.skin</text>
   <text x="521.5" y="237" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skins">mc_gui_rect: src.proto.skin</text>
   <text x="521.5" y="252" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skins">...: src.proto.skin</text>
-  <rect x="421.5" y="377.5" height="92" width="139" data-name="stack" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
-  <path d="M421.5 408.5 L560.5 408.5" data-name="stack" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <text x="491" y="399" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="stack">stack</text>
-  <text x="429.5" y="430" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="stack">push(drawable)</text>
-  <text x="429.5" y="445" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="stack">pop(element)</text>
-  <text x="429.5" y="460" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="stack">touch(point)</text>
-  <rect x="180.5" y="562.5" height="31" width="163" data-name="src.proto.drawable" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:6 6;stroke-width:3;"></rect>
-  <text x="262" y="584" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="src.proto.drawable">src.proto.drawable</text>
-  <rect x="136.5" y="692.5" height="777" width="556" data-name="proto" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
-  <path d="M136.5 692.5 L136.5 661.5 L193.5 661.5 L193.5 692.5 Z" data-name="proto" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M136.5 692.5 L692.5 692.5" data-name="proto" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <text x="144.5" y="683" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="proto">proto</text>
-  <path d="M504 805.5 L504 879.5 L497.3 893.5 L497.3 893.5 " data-name="proto" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M495.4 885.2 L497.3 893.5 L505 889.8 L494.4 899.5 Z" data-name="proto" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M321.4 1238.4 L313.8 1252.5 L313.8 1280.5 L313.8 1280.5 " data-name="proto" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M322.9 1246.8 L321.4 1238.4 L313.5 1241.7 L324.6 1232.5 Z" data-name="proto" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M507.6 1238.4 L515.3 1252.5 L515.3 1272.5 L515.3 1272.5 " data-name="proto" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M515.5 1241.7 L507.6 1238.4 L506.1 1246.8 L504.4 1232.5 Z" data-name="proto" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
-  <rect x="164.5" y="899.5" height="333" width="500" data-name="drawable" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
-  <path d="M164.5 930.5 L164.5 930.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M164.5 930.5 L664.5 930.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M164.5 1081.5 L664.5 1081.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M414.5 930.5 L414.5 1232.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M664.5 930.5 L664.5 1232.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <text x="414.5" y="921" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="drawable">drawable</text>
-  <text x="172.5" y="952" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">app: src.app</text>
-  <text x="172.5" y="967" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">parent: src.proto.drawable</text>
-  <text x="172.5" y="982" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">root: src.proto.drawable</text>
-  <text x="172.5" y="997" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_size: table</text>
-  <text x="172.5" y="1012" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_pos: table</text>
-  <text x="172.5" y="1027" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">rel_pos: table</text>
-  <text x="422.5" y="952" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">pos?: table</text>
-  <text x="422.5" y="967" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">size?: table</text>
-  <text x="422.5" y="982" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">colors?: table</text>
-  <text x="422.5" y="997" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_colors?: table</text>
-  <text x="422.5" y="1012" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">closed?: boolean</text>
-  <text x="422.5" y="1027" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">expander?: boolean</text>
-  <text x="172.5" y="1103" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">init()</text>
-  <text x="172.5" y="1118" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">draw()</text>
-  <text x="172.5" y="1133" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">draw_recursive()</text>
-  <text x="172.5" y="1148" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_geometry()</text>
-  <text x="172.5" y="1163" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_geometry_recursive()</text>
-  <text x="172.5" y="1178" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_size()</text>
-  <text x="172.5" y="1193" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_pos()</text>
-  <text x="172.5" y="1208" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_expand()</text>
-  <text x="172.5" y="1223" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_colors()</text>
-  <text x="422.5" y="1103" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">on_draw?()</text>
-  <text x="422.5" y="1118" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">on_init?()</text>
-  <text x="422.5" y="1133" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">on_hover?()</text>
-  <text x="422.5" y="1148" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">on_click?()</text>
-  <rect x="239.5" y="720.5" height="139" width="172" data-name="skin" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
-  <path d="M239.5 751.5 L411.5 751.5" data-name="skin" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M239.5 782.5 L411.5 782.5" data-name="skin" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M239.5 828.5 L411.5 828.5" data-name="skin" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <text x="325.5" y="742" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="skin">skin</text>
-  <text x="247.5" y="773" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">atlas</text>
-  <text x="247.5" y="804" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">grid?: lib.image.grid</text>
-  <text x="247.5" y="819" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">marks?: table</text>
-  <text x="247.5" y="850" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">init()</text>
-  <rect x="429.5" y="1272.5" height="169" width="171" data-name="text" style="stroke:#33322E;fill:#D2AA99;stroke-dasharray:none;stroke-width:3;"></rect>
-  <path d="M429.5 1303.5 L600.5 1303.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M429.5 1334.5 L600.5 1334.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M429.5 1380.5 L600.5 1380.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <text x="515" y="1294" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="text">text</text>
-  <text x="437.5" y="1325" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">text: string</text>
-  <text x="437.5" y="1356" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">text_obj?: love.Text</text>
-  <text x="437.5" y="1371" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">wrap?: boolean</text>
-  <text x="437.5" y="1402" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">init()</text>
-  <text x="437.5" y="1417" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">update()</text>
-  <text x="437.5" y="1432" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">draw()</text>
-  <rect x="237.5" y="1280.5" height="153" width="152" data-name="rect" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
-  <path d="M237.5 1311.5 L389.5 1311.5" data-name="rect" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <path d="M237.5 1357.5 L389.5 1357.5" data-name="rect" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
-  <text x="313.5" y="1302" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="rect">rect</text>
-  <text x="245.5" y="1333" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">skin?</text>
-  <text x="245.5" y="1348" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">image?</text>
-  <text x="245.5" y="1379" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">init()</text>
-  <text x="245.5" y="1394" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">update_expand()</text>
-  <text x="245.5" y="1409" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">update_image()</text>
-  <text x="245.5" y="1424" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">draw()</text>
-  <rect x="451.5" y="774.5" height="31" width="106" data-name="src.app.win" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:6 6;stroke-width:3;"></rect>
-  <text x="504.5" y="796" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="src.app.win">src.app.win</text>
+  <rect x="421.5" y="385.5" height="92" width="139" data-name="stack" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M421.5 416.5 L560.5 416.5" data-name="stack" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="491" y="407" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="stack">stack</text>
+  <text x="429.5" y="438" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="stack">push(drawable)</text>
+  <text x="429.5" y="453" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="stack">pop(element)</text>
+  <text x="429.5" y="468" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="stack">touch(point)</text>
+  <rect x="180.5" y="577.5" height="31" width="163" data-name="src.proto.drawable" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:6 6;stroke-width:3;"></rect>
+  <text x="262" y="599" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="src.proto.drawable">src.proto.drawable</text>
+  <rect x="136.5" y="707.5" height="777" width="556" data-name="proto" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M136.5 707.5 L136.5 676.5 L193.5 676.5 L193.5 707.5 Z" data-name="proto" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M136.5 707.5 L692.5 707.5" data-name="proto" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="144.5" y="698" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="proto">proto</text>
+  <path d="M504 820.5 L504 894.5 L497.3 908.5 L497.3 908.5 " data-name="proto" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M495.4 900.2 L497.3 908.5 L505 904.8 L494.4 914.5 Z" data-name="proto" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M321.4 1253.4 L313.8 1267.5 L313.8 1295.5 L313.8 1295.5 " data-name="proto" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M322.9 1261.8 L321.4 1253.4 L313.5 1256.7 L324.6 1247.5 Z" data-name="proto" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M507.6 1253.4 L515.3 1267.5 L515.3 1287.5 L515.3 1287.5 " data-name="proto" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M515.5 1256.7 L507.6 1253.4 L506.1 1261.8 L504.4 1247.5 Z" data-name="proto" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <rect x="164.5" y="914.5" height="333" width="500" data-name="drawable" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M164.5 945.5 L164.5 945.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M164.5 945.5 L664.5 945.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M164.5 1096.5 L664.5 1096.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M414.5 945.5 L414.5 1247.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M664.5 945.5 L664.5 1247.5" data-name="drawable" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="414.5" y="936" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="drawable">drawable</text>
+  <text x="172.5" y="967" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">app: src.app</text>
+  <text x="172.5" y="982" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">parent: src.proto.drawable</text>
+  <text x="172.5" y="997" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">root: src.proto.drawable</text>
+  <text x="172.5" y="1012" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_size: table</text>
+  <text x="172.5" y="1027" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_pos: table</text>
+  <text x="172.5" y="1042" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">rel_pos: table</text>
+  <text x="422.5" y="967" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">pos?: table</text>
+  <text x="422.5" y="982" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">size?: table</text>
+  <text x="422.5" y="997" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">colors?: table</text>
+  <text x="422.5" y="1012" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_colors?: table</text>
+  <text x="422.5" y="1027" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">closed?: boolean</text>
+  <text x="422.5" y="1042" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">expander?: boolean</text>
+  <text x="172.5" y="1118" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">init()</text>
+  <text x="172.5" y="1133" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">draw()</text>
+  <text x="172.5" y="1148" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">draw_recursive()</text>
+  <text x="172.5" y="1163" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_geometry()</text>
+  <text x="172.5" y="1178" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_geometry_recursive()</text>
+  <text x="172.5" y="1193" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_size()</text>
+  <text x="172.5" y="1208" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_pos()</text>
+  <text x="172.5" y="1223" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_expand()</text>
+  <text x="172.5" y="1238" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">update_colors()</text>
+  <text x="422.5" y="1118" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">on_draw?()</text>
+  <text x="422.5" y="1133" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">on_init?()</text>
+  <text x="422.5" y="1148" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">on_hover?()</text>
+  <text x="422.5" y="1163" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">on_click?()</text>
+  <rect x="239.5" y="735.5" height="139" width="172" data-name="skin" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M239.5 766.5 L411.5 766.5" data-name="skin" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M239.5 797.5 L411.5 797.5" data-name="skin" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M239.5 843.5 L411.5 843.5" data-name="skin" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="325.5" y="757" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="skin">skin</text>
+  <text x="247.5" y="788" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">atlas</text>
+  <text x="247.5" y="819" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">grid?: lib.image.grid</text>
+  <text x="247.5" y="834" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">marks?: table</text>
+  <text x="247.5" y="865" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="skin">init()</text>
+  <rect x="429.5" y="1287.5" height="169" width="171" data-name="text" style="stroke:#33322E;fill:#D2AA99;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M429.5 1318.5 L600.5 1318.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M429.5 1349.5 L600.5 1349.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M429.5 1395.5 L600.5 1395.5" data-name="text" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="515" y="1309" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="text">text</text>
+  <text x="437.5" y="1340" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">text: string</text>
+  <text x="437.5" y="1371" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">text_obj?: love.Text</text>
+  <text x="437.5" y="1386" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">wrap?: boolean</text>
+  <text x="437.5" y="1417" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">init()</text>
+  <text x="437.5" y="1432" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">update()</text>
+  <text x="437.5" y="1447" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="text">draw()</text>
+  <rect x="237.5" y="1295.5" height="153" width="152" data-name="rect" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <path d="M237.5 1326.5 L389.5 1326.5" data-name="rect" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M237.5 1372.5 L389.5 1372.5" data-name="rect" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="313.5" y="1317" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="rect">rect</text>
+  <text x="245.5" y="1348" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">skin?</text>
+  <text x="245.5" y="1363" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">image?</text>
+  <text x="245.5" y="1394" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">init()</text>
+  <text x="245.5" y="1409" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">update_expand()</text>
+  <text x="245.5" y="1424" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">update_image()</text>
+  <text x="245.5" y="1439" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rect">draw()</text>
+  <rect x="451.5" y="789.5" height="31" width="106" data-name="src.app.win" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:6 6;stroke-width:3;"></rect>
+  <text x="504.5" y="811" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="src.app.win">src.app.win</text>
 </svg>
