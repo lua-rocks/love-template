@@ -38,7 +38,7 @@ return {
       node = "text",
       pos = { "50%", "50%" },
       on_init = function(self)
-        self.text = "Привет?"
+        self.text = "Привет!?"
         self:update()
       end,
     },

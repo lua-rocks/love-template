@@ -4,17 +4,16 @@
 ---@field bold love.Font
 local fonts = proto.set_name({}, "src.app.fonts")
 
+local glyphs = " _?!@#$%&\"'`*+-=~,.:;\\/|^<>[](){}0123456789"
+  .. "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  .. "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+
 function fonts:init()
   local names = { "normal", "bold" }
   for _, name in ipairs(names) do
     self[name] = love.graphics.newImageFont(
       "res/img/fonts/" .. name .. ".png",
-      " 0123456789,.-=;:@#$^&?!+()%\"/*"
-        .. "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        .. "abcdefghijklmnopqrstuvwxyz"
-        .. "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
-        .. "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
-        .. "<>'_[]{}",
+      glyphs,
       1
     )
   end

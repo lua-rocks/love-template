@@ -52,6 +52,11 @@ function Drawable:init()
 end
 
 function Drawable:draw()
+  if self.abs_colors and self.abs_colors[1] then
+    lg.setColor(unpack(self.abs_colors[1]))
+  else
+    lg.setColor(1, 1, 1)
+  end
   if self.on_draw then
     self:on_draw()
   end
@@ -59,11 +64,6 @@ function Drawable:draw()
 end
 
 function Drawable:draw_recursive()
-  if self.abs_colors and self.abs_colors[1] then
-    lg.setColor(unpack(self.abs_colors[1]))
-  else
-    lg.setColor(1, 1, 1)
-  end
   self:draw()
   local function draw_nodes()
     for _, node in ipairs(self) do
