@@ -7,7 +7,7 @@
 local app = proto.set_name({}, "src.app")
 
 function app:init()
-  self.palettes = require("src.app.palettes")
+  self.palettes = require("src.app.palettes"):init()
   self.skins = require("src.app.skins"):init(self.palettes)
   self.fonts = require("src.app.fonts"):init()
   self.stack = require("src.app.stack")

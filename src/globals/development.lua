@@ -17,11 +17,11 @@ love.keypressed = function(key)
   end
 end
 
-log.info("Initialized in development mode.")
-
 if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" then
   package.loaded["lldebugger"] = assert(
     loadfile(os.getenv("LOCAL_LUA_DEBUGGER_FILEPATH"))
   )()
   require("lldebugger").start()
 end
+
+log.info("Initialized in development mode.")

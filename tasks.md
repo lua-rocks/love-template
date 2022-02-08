@@ -1,9 +1,6 @@
 # Tasks
 
-- [ ] **Optimize structure**
-  - [x] Move x5 palette to examples
-  - [x] Decrease nesting
-  - [ ] **Add or remove init() from non-prototypes**
+- [x] Optimize structure
 - [ ] **Make good font**
 - [ ] GUI
   - [x] Modify size and pos on fly

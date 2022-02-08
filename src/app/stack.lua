@@ -5,8 +5,6 @@
 ---@type src.app.stack|src.proto.drawable[]
 local stack = proto.set_name({}, "src.app.stack")
 
-local ripairs = require("lib.table").ripairs
-
 ---@param drawable src.proto.drawable
 ---@return integer index
 function stack:push(drawable)
@@ -22,7 +20,7 @@ function stack:pop(element)
     self[element] = nil
     return element
   else
-    for index, value in ripairs(self) do
+    for index, value in ipairs(self) do
       if value == element then
         self[index] = nil
         return index
