@@ -17,20 +17,19 @@ function skins:init(pals)
     { c.white, c.silver, c.gray, c.rock, c.black },
     { c.yellow, c.orange, c.wood, c.brown, c.black },
   }
-  local sub_names = {
-    "red",
-    "orange",
-    "grass",
-    "water",
-    "gray",
-    "wood",
-  }
   self.mc_gui_rect = self.gui:recolor_part(
     { 0, 0 },
     { 2, 2 },
     sub_colors[1],
     sub_colors,
-    sub_names
+    {
+      "red",
+      "orange",
+      "grass",
+      "water",
+      "gray",
+      "wood",
+    }
   )
   return self
 end

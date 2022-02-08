@@ -38,10 +38,7 @@ function Skin:recolor_part(pos_in_quads, size_in_quads, pal, all_pals, names)
   local palettes = require("lib.image.palettes")
   local x, y = unpack(pos_in_quads)
   local w, h = unpack(size_in_quads)
-  local gx, gy = unpack(self.grid.grid_pos or { 0, 0 })
-  local qw, qh = unpack(self.grid.quad_size)
-  w, h = (w + 1) * qw, (h + 1) * qh
-  x, y = x * w * gx, y * h * gy
+  x, y, w, h = self.grid:tiles2pixels(x, y, w, h)
   local newdata = li.newImageData(w, h)
   newdata:paste(self.data, 0, 0, x, y, w, h)
   newdata = palettes.apply(newdata, pal, all_pals)

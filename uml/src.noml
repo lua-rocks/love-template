@@ -45,12 +45,15 @@
   ]
   [app]-/-[<package> proto|
     [skin|
-      atlas
+      image love.Image
       |
+      file?: string
+      data?: love.ImageData
       grid?: lib.image.grid
       marks?: table
       |
       init()
+      recolor_part(...)
     ] -/- [drawable]
     [<reference>src.app.win] -> [drawable]
     [<table>drawable|

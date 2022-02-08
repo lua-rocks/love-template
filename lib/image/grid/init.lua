@@ -10,7 +10,7 @@ local new_quad = love.graphics.newQuad
 ---@field image_size {[1]:number,[2]:number}
 ---@field quad_size {[1]:number,[2]:number}
 ---@field grid_pos? {[1]:number,[2]:number}
-local grid = proto.set_name({}, "lib.image.grid")
+local Grid = proto.set_name({}, "lib.image.grid")
 
 ---Get single quad by position or rectangle selection
 ---@param x1 integer X or left corner X
@@ -18,7 +18,7 @@ local grid = proto.set_name({}, "lib.image.grid")
 ---@param x2? integer Right corner X or `x1`
 ---@param y2? integer Right corner Y or `y1`
 ---@return love.Quad
-function grid:get_quad(x1, y1, x2, y2)
+function Grid:get_quad(x1, y1, x2, y2)
   x2 = (x2 or x1) - x1 + 1
   y2 = (y2 or y1) - y1 + 1
   local iw, ih = unpack(self.image_size)
@@ -34,7 +34,7 @@ end
 ---@param x2? integer Right corner X or `x1`
 ---@param y2? integer Right corner Y or `y1`
 ---@return fun(): love.Quad, integer, integer
-function grid:quads(x1, y1, x2, y2)
+function Grid:quads(x1, y1, x2, y2)
   x2 = x2 or x1
   y2 = y2 or y1
   local iw, ih = unpack(self.image_size)
@@ -57,4 +57,20 @@ function grid:quads(x1, y1, x2, y2)
   return next_iter
 end
 
-return grid
+---@param x? integer
+---@param y? integer
+---@param w? integer
+---@param h? integer
+function Grid:tiles2pixels(x, y, w, h)
+  x = x or 0
+  y = y or 0
+  w = w or 0
+  h = h or 0
+  local gx, gy = unpack(self.grid_pos or { 0, 0 })
+  local qw, qh = unpack(self.quad_size)
+  w, h = (w + 1) * qw, (h + 1) * qh
+  x, y = x * w * gx, y * h * gy
+  return x, y, w, h
+end
+
+return Grid
