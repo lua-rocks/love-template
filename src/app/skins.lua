@@ -1,11 +1,11 @@
-local Skin = require("src.app.drawable.skin")
+local Skin = require("src.proto.skin")
 local palettes = require("lib.image.palettes")
 local li = love.image
 local lg = love.graphics
 
 ---@class src.app.skins
----@field gui src.app.drawable.skin
----@field mc_gui_rect src.app.drawable.skin
+---@field gui src.proto.skin All GUI.
+---@field mc_gui_rect src.proto.skin Multicolor GUI rectangle.
 local skins = proto.set_name({}, "src.app.skins")
 
 ---@param pals src.app.palettes

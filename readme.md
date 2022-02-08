@@ -56,4 +56,4 @@ Pixel-style game template based on [LÖVE][] engine.
 
 ## Structure
 
-![src.app](uml/app.svg)
+![src.noml](uml/src.svg)

@@ -1,10 +1,10 @@
 local lg = love.graphics
-local Drawable = require("src.app.drawable")
+local Drawable = require("src.proto.drawable")
 
----@class src.app.drawable.gui.rect:src.app.drawable
+---@class src.proto.rect:src.proto.drawable
 ---@field skin? string|src.app.skins-name
 ---@field image? love.Drawable|string
-local rect = proto.link({}, Drawable, "src.app.drawable.gui.rect")
+local rect = proto.link({}, Drawable, "src.proto.rect")
 
 function rect:init()
   if self.skin and not self.colors then

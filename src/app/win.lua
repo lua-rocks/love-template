@@ -1,14 +1,14 @@
 local lg = love.graphics
 local lw = love.window
-local Drawable = require("src.app.drawable")
-local Rect = require("src.app.drawable.gui.rect")
+local Drawable = require("src.proto.drawable")
+local Rect = require("src.proto.rect")
 
----@class src.app.drawable.win:src.app.drawable
+---@class src.app.win:src.proto.drawable
 ---@field flags table
 ---@field scale integer
 ---@field parent nil
----@field hovered src.app.drawable Element under mouse cursor right now.
-local win = proto.link({}, Drawable, "src.app.drawable.win")
+---@field hovered src.proto.drawable Element under mouse cursor right now.
+local win = proto.link({}, Drawable, "src.app.win")
 
 local function make_root_node(self, w, h)
   local colors = self.app.palettes.name_to_color
@@ -46,8 +46,8 @@ local function make_root_node(self, w, h)
 end
 
 ---@generic S
----@param self S|src.app.drawable.win
----@return S|src.app.drawable.win self
+---@param self S|src.app.win
+---@return S|src.app.win self
 function win:init()
   local w, h, f = lw.getMode()
   self.flags = f

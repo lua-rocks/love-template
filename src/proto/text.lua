@@ -1,15 +1,15 @@
 local lg = love.graphics
-local Drawable = require("src.app.drawable")
+local Drawable = require("src.proto.drawable")
 
----@class src.app.drawable.gui.text:src.app.drawable
+---@class src.proto.text:src.proto.drawable
 ---@field text string
 ---@field text_obj? love.Text
 ---@field wrap? boolean
-local text = proto.link({}, Drawable, "src.app.drawable.gui.text")
+local text = proto.link({}, Drawable, "src.proto.text")
 
 ---@generic S
----@param self S|src.app.drawable.gui.text
----@return S|src.app.drawable.gui.text self
+---@param self S|src.proto.text
+---@return S|src.proto.text self
 function text:init()
   if not self.colors then
     if self.parent.colors then

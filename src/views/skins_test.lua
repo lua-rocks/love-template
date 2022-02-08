@@ -1,5 +1,5 @@
 return {
-  node = "gui.rect",
+  node = "rect",
   pos = { "50%8", "50%8" },
   size = { "50%8", "50%8" },
   on_init = function(self)

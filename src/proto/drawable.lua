@@ -7,10 +7,10 @@ local lg = love.graphics
 ---+ "4x4" = 16 (convenient when you want to set value in tiles);
 ---+ "-5" = parent's value -5;
 ---+ "+5" or "5" = 5.
----@class src.app.drawable
+---@class src.proto.drawable
 ---@field app src.app
----@field parent src.app.drawable
----@field root src.app.drawable
+---@field parent src.proto.drawable
+---@field root src.proto.drawable
 ---@field abs_size {[1]:number, [2]:number}
 ---@field abs_pos {[1]:number, [2]:number}
 ---@field rel_pos {[1]:number, [2]:number}
@@ -20,15 +20,15 @@ local lg = love.graphics
 ---@field abs_colors? table<integer|string,lib.image.color> Real colors.
 ---@field closed? boolean Keep content in bounds.
 ---@field expander? boolean Increase parent's size if needed.
----@field on_draw? fun(self:src.app.drawable)
----@field on_init? fun(self:src.app.drawable)
----@field on_hover? fun(self:src.app.drawable)
----@field on_click? fun(self:src.app.drawable)
-local drawable = proto.set_name({}, "src.app.drawable")
+---@field on_draw? fun(self:src.proto.drawable)
+---@field on_init? fun(self:src.proto.drawable)
+---@field on_hover? fun(self:src.proto.drawable)
+---@field on_click? fun(self:src.proto.drawable)
+local drawable = proto.set_name({}, "src.proto.drawable")
 
 ---@generic S
----@param self S|src.app.drawable
----@return S|src.app.drawable self
+---@param self S|src.proto.drawable
+---@return S|src.proto.drawable self
 function drawable:init()
   local parent = self.parent
   self.app = parent.app or parent ---@type src.app

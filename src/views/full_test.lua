@@ -1,5 +1,5 @@
 return {
-  node = "gui.rect",
+  node = "rect",
   pos = { 16, 16 },
   size = { "50%4", "50%4" },
   skin = "red",
@@ -17,7 +17,7 @@ return {
     end
   end,
   {
-    node = "gui.rect",
+    node = "rect",
     pos = { "50%4", "50%4" },
     size = { "16x4", "8x4" },
     skin = "orange",
@@ -35,7 +35,7 @@ return {
       self[1]:update()
     end,
     {
-      node = "gui.text",
+      node = "text",
       pos = { "50%", "50%" },
       on_init = function(self)
         self.text = "Привет?"

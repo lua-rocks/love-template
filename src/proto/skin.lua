@@ -8,11 +8,11 @@ local Grid = require("lib.image.grid")
 ---```lua
 ---grid.grid_pos = skin.marks["red"]
 ---```
----@class src.app.drawable.skin
+---@class src.proto.skin
 ---@field atlas love.Drawable|string
 ---@field grid? lib.image.grid
 ---@field marks? table<any, { [1]:integer, [2]:integer }>
-local skin = proto.set_name({}, "src.app.drawable.skin")
+local skin = proto.set_name({}, "src.proto.skin")
 
 function skin:init()
   if type(self.atlas) == "string" then

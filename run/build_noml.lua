@@ -1,3 +1,3 @@
 print("\n===============BUILD NOML===============\n")
 
-os.execute("nomnoml uml/app.noml uml/app.svg")
+os.execute("nomnoml uml/src.noml uml/src.svg")

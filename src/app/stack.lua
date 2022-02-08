@@ -1,13 +1,13 @@
 ---Stack of drawables. Used to implement methods `on_click`, `on_hower` etc.
 ---Only elements with these methods should be added on stack.
----@class src.app.drawable.stack
+---@class src.app.stack
 
----@type src.app.drawable.stack|src.app.drawable[]
-local stack = proto.set_name({}, "src.app.drawable.stack")
+---@type src.app.stack|src.proto.drawable[]
+local stack = proto.set_name({}, "src.app.stack")
 
 local ripairs = require("lib.table").ripairs
 
----@param drawable src.app.drawable
+---@param drawable src.proto.drawable
 ---@return integer index
 function stack:push(drawable)
   local last = #self + 1
@@ -15,8 +15,8 @@ function stack:push(drawable)
   return last
 end
 
----@param element src.app.drawable|integer
----@return integer|src.app.drawable index or `nil` if failed.
+---@param element src.proto.drawable|integer
+---@return integer|src.proto.drawable index or `nil` if failed.
 function stack:pop(element)
   if type(element) == "number" then
     self[element] = nil
@@ -33,7 +33,7 @@ function stack:pop(element)
 end
 
 ---@param point { [1]:integer, [2]:integer }
----@return src.app.drawable? element
+---@return src.proto.drawable? element
 ---@return integer? index
 function stack:touch(point)
   for index, element in ipairs(self) do
