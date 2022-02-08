@@ -7,9 +7,6 @@ local Drawable = require("src.proto.drawable")
 ---@field wrap? boolean
 local Text = proto.link({}, Drawable, "src.proto.text")
 
----@generic S
----@param self S|src.proto.text
----@return S|src.proto.text self
 function Text:init()
   if not self.colors then
     if self.parent.colors then

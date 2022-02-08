@@ -26,9 +26,6 @@ local lg = love.graphics
 ---@field on_click? fun(self:src.proto.drawable)
 local Drawable = proto.set_name({}, "src.proto.drawable")
 
----@generic S
----@param self S|src.proto.drawable
----@return S|src.proto.drawable self
 function Drawable:init()
   local parent = self.parent
   self.app = parent.app or parent ---@type src.app

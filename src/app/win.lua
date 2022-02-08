@@ -45,9 +45,6 @@ local function make_root_node(self, w, h)
   })
 end
 
----@generic S
----@param self S|src.app.win
----@return S|src.app.win self
 function win:init()
   local w, h, f = lw.getMode()
   self.flags = f
@@ -58,6 +55,34 @@ function win:init()
   self.size = { w, h }
   make_root_node(self, w, h)
   return self
+end
+
+---@param view string
+function win:load_view(view)
+  local function parse(t, parent)
+    local forbidden = { drawable = true, skin = true }
+    if forbidden[t.node] then
+      error("wrong node: " .. tostring(t.node))
+    end
+    t.parent = parent
+    local Node = require("src.proto." .. t.node)
+    t.node = nil
+    local conf = {}
+    for key, value in pairs(t) do
+      if type(key) == "string" then
+        conf[key] = value
+      end
+    end
+    local node = proto.new(Node, conf)
+    for _, value in ipairs(t) do
+      parse(value, node)
+    end
+    if node.on_hover or node.on_click then
+      self.app.stack:push(node)
+    end
+    return node
+  end
+  return parse(require("src.views." .. view), self[1])
 end
 
 function win:draw()
