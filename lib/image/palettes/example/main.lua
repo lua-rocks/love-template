@@ -20,13 +20,12 @@ local palette_index_now
 local function next_demo()
   demo_switcher = not demo_switcher
   if demo_switcher then
-    palettes_map_image_path = dir .. "palette-swapable.png"
+    palettes_map_image_path = dir .. "db16.png"
     palettes_image_test = dir .. "palette-test.png"
     palette_index_start = 5
     palette_index_now = 5
   else
-    -- palettes_map_image_path = dir .. "5colors-swapable.png"
-    palettes_map_image_path = "res/img/palettes/db16/db16x5.png"
+    palettes_map_image_path = dir .. "db16x5.png"
     palettes_image_test = dir .. "5colors-test.png"
     palette_index_start = 1
     palette_index_now = 1

@@ -1,6 +1,8 @@
 # Tasks
 
 - [ ] **Optimize structure**
+  - [x] Move x5 palette to examples
+  - [ ] Decrease nesting if possible
 - [ ] **Make good font**
 - [ ] GUI
   - [x] Modify size and pos on fly
