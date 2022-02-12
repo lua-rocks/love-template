@@ -20,7 +20,7 @@ return {
     node = "rect",
     pos = { "50%4", "50%4" },
     size = { "16x4", "8x4" },
-    skin = "orange",
+    skin = "gray",
     on_hover = function(self, on)
       if on then
         self[1].text = "Hi! :3"
@@ -37,6 +37,8 @@ return {
     {
       node = "text",
       pos = { "50%", "50%" },
+      colors = { "white", "black-1" },
+      shadow = true,
       on_init = function(self)
         self.text = "Привет!?"
         self:update()

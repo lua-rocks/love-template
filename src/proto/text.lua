@@ -5,6 +5,7 @@ local Drawable = require("src.proto.drawable")
 ---@field text string
 ---@field text_obj? love.Text
 ---@field wrap? boolean
+---@field shadow? boolean
 local Text = proto.link({}, Drawable, "src.proto.text")
 
 function Text:init()
@@ -27,7 +28,13 @@ end
 
 function Text:draw()
   Drawable.draw(self)
-  lg.draw(self.text_obj, unpack(self.abs_pos))
+  local x, y = unpack(self.abs_pos)
+  if self.shadow then
+    lg.setColor(self.abs_colors[2])
+    lg.draw(self.text_obj, x, y + 1)
+    lg.setColor(self.abs_colors[1])
+  end
+  lg.draw(self.text_obj, x, y)
   return self
 end
 

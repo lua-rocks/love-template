@@ -7,6 +7,7 @@
     - [x] Outside
     - [x] Expand
     - [ ] Text wrap
+    - [x] Text shadows
   - [x] Events
     - [x] `on_init`
     - [x] `on_draw`
