@@ -172,6 +172,7 @@ function Drawable:update_expand()
   end
   for i = 1, 2 do
     local size = self.rel_pos[i] + self.abs_size[i] + self.expander[i]
+    size = math.ceil(size / 4) * 4
     if size > self.parent.abs_size[i] then
       self.parent.abs_size[i] = size
       -- self.parent:update_expand()

@@ -1,13 +1,10 @@
-return {
-  node = "rect",
-  pos = { "50%8", "50%8" },
-  size = { "50%8", "50%8" },
-  skin = "orange",
-  {
-    node = "text",
-    text = "hello",
-    pos = { 4, 4 },
-    colors = { "wood", "brown" },
-    shadow = true,
-  },
+---@type src.proto.text
+local hello = {
+  node = "text",
+  text = "hello",
+  pos = { 8, 8 },
+  colors = { "pink", "brown" },
+  shadow = true,
 }
+
+return hello
