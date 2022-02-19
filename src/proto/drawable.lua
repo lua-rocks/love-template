@@ -7,6 +7,11 @@ local lg = love.graphics
 ---+ "4x4" = 16 (convenient when you want to set value in tiles);
 ---+ "-5" = parent's value -5;
 ---+ "+5" or "5" = 5.
+---
+---FIXME:
+---
+---+ In "expander" values are currently always rounded by 4.
+---
 ---@class src.proto.drawable
 ---@field app src.app
 ---@field parent src.proto.drawable
@@ -175,13 +180,11 @@ function Drawable:update_expand()
     size = math.ceil(size / 4) * 4
     if size > self.parent.abs_size[i] then
       self.parent.abs_size[i] = size
-      -- self.parent:update_expand()
     end
     local pos = self.parent.abs_pos[i] - self.abs_pos[i]
     if pos > 0 then
       self.parent.abs_pos[i] = self.parent.abs_pos[i] - pos
       self.parent.abs_size[i] = self.parent.abs_size[i] + pos
-      -- self.parent:update_expand()
     end
   end
   return self

@@ -8,7 +8,6 @@
     - [x] Expand
     - [ ] Text wrap
     - [x] Text shadows
-    - [ ] Rounded expander settings (currently: {x%4, y%4})
   - [x] Events
     - [x] `on_init`
     - [x] `on_draw`
