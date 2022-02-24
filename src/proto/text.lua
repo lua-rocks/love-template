@@ -29,6 +29,7 @@ end
 function Text:draw()
   Drawable.draw(self)
   local x, y = unpack(self.abs_pos)
+  x, y = x + 1, y - 1
   if self.shadow then
     lg.setColor(self.abs_colors[2])
     lg.draw(self.text_obj, x, y + 1)

@@ -24,7 +24,7 @@ local lg = love.graphics
 ---@field colors? table<integer|string,string> Named colors.
 ---@field abs_colors? table<integer|string,lib.image.color> Real colors.
 ---@field closed? boolean Keep content in bounds.
----@field expander? boolean|{[1]:number, [2]:number} Increase parent's size.
+---@field expander? boolean|{[1]?:number, [2]?:number} Increase parent's size.
 ---@field on_draw? fun(self:src.proto.drawable)
 ---@field on_init? fun(self:src.proto.drawable)
 ---@field on_hover? fun(self:src.proto.drawable)
@@ -176,15 +176,17 @@ function Drawable:update_expand()
     self.expander = { 0, 0 }
   end
   for i = 1, 2 do
-    local size = self.rel_pos[i] + self.abs_size[i] + self.expander[i]
-    size = math.ceil(size / 4) * 4
-    if size > self.parent.abs_size[i] then
-      self.parent.abs_size[i] = size
-    end
-    local pos = self.parent.abs_pos[i] - self.abs_pos[i]
-    if pos > 0 then
-      self.parent.abs_pos[i] = self.parent.abs_pos[i] - pos
-      self.parent.abs_size[i] = self.parent.abs_size[i] + pos
+    if self.expander[i] ~= nil then
+      local size = self.rel_pos[i] + self.abs_size[i] + self.expander[i]
+      size = math.ceil(size / 4) * 4
+      if size > self.parent.abs_size[i] then
+        self.parent.abs_size[i] = size
+      end
+      local pos = self.parent.abs_pos[i] - self.abs_pos[i]
+      if pos > 0 then
+        self.parent.abs_pos[i] = self.parent.abs_pos[i] - pos
+        self.parent.abs_size[i] = self.parent.abs_size[i] + pos
+      end
     end
   end
   return self
