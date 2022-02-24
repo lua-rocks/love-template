@@ -16,7 +16,7 @@ local lg = love.graphics
 ---@field app src.app
 ---@field parent src.proto.drawable
 ---@field root src.proto.drawable
----@field abs_size {[1]:number, [2]:number}
+---@field abs_size {[1]:number, [2]:number} Set it to nil to reload from `size`.
 ---@field abs_pos {[1]:number, [2]:number}
 ---@field rel_pos {[1]:number, [2]:number}
 ---@field pos? {[1]:number|string, [2]:number|string}
@@ -30,6 +30,9 @@ local lg = love.graphics
 ---@field on_hover? fun(self:src.proto.drawable)
 ---@field on_click? fun(self:src.proto.drawable)
 ---@field on_update? fun(self:src.proto.drawable, what:string)
+---@field id? string
+---@field name? string
+---@field tags? string[]
 local Drawable = proto.set_name({}, "src.proto.drawable")
 
 function Drawable:init()
@@ -89,7 +92,15 @@ function Drawable:draw_recursive()
   return self
 end
 
----@param what string
+---@alias src.proto.drawable-what
+---|'"size"'
+---|'"pos"'
+---|'"expander"'
+---|'"colors"'
+---|'"geometry"'
+---|'"geometry_recursive"''
+
+---@param what src.proto.drawable-what
 function Drawable:update(what)
   if self.on_update then
     self.on_update(self, what)
@@ -101,25 +112,27 @@ function Drawable:update(what)
     local win = self.app.win
     local parent = self.parent
     for i = 1, 2 do
-      local size_i = self.size[i]
-      if type(size_i) == "string" then
-        local s1, n1, s2, n2 = size_i:match("(%D-)(%d+)(%D*)(%d*)")
-        n2 = tonumber(n2)
-        if s2 == "%" then
-          local prc = n1 * 0.01
-          n1 = math.floor(parent.abs_size[i] * prc)
-          if n2 then
-            n1 = math.floor(n1 / n2) * n2
+      if type(self.abs_size[i]) ~= "number" then
+        local size_i = self.size[i]
+        if type(size_i) == "string" then
+          local s1, n1, s2, n2 = size_i:match("(%D-)(%d+)(%D*)(%d*)")
+          n2 = tonumber(n2)
+          if s2 == "%" then
+            local prc = n1 * 0.01
+            n1 = math.floor(parent.abs_size[i] * prc)
+            if n2 then
+              n1 = math.floor(n1 / n2) * n2
+            end
+          elseif s2 == "x" then
+            n1 = n1 * n2
           end
-        elseif s2 == "x" then
-          n1 = n1 * n2
+          if s1 == "-" then
+            n1 = self.parent.abs_size[i] - n1
+          end
+          self.abs_size[i] = n1
+        elseif self ~= win then
+          self.abs_size[i] = size_i
         end
-        if s1 == "-" then
-          n1 = self.parent.abs_size[i] - n1
-        end
-        self.abs_size[i] = n1
-      elseif self ~= win then
-        self.abs_size[i] = size_i
       end
     end
     return self
@@ -217,7 +230,6 @@ function Drawable:update(what)
     end
     return self
   end
-  error("Cannot update " .. tostring(what))
 end
 
 return Drawable

@@ -19,7 +19,10 @@ function Text:init()
   return self
 end
 
----@param what string
+---@alias src.proto.text-what
+---|'"text"'
+
+---@param what src.proto.drawable-what|src.proto.text-what
 function Text:update(what)
   if self.on_update then
     self.on_update(self, what)

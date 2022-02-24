@@ -15,7 +15,10 @@ function Rect:init()
   return self
 end
 
----@param what string
+---@alias src.proto.rect-what
+---|'"image"'
+
+---@param what src.proto.drawable-what|src.proto.rect-what
 function Rect:update(what)
   if self.on_update then
     self.on_update(self, what)
@@ -47,8 +50,8 @@ function Rect:update(what)
     end
     return self
   end
-  if what == "expander" then
-    Drawable.update(self, "expander")
+  if what == "size" then
+    Drawable.update(self, "size")
     self:update("image")
     return self
   end
