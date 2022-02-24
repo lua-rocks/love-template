@@ -55,7 +55,7 @@ function win:init()
   self.size = { w, h }
   make_root_node(self, w, h)
   self:load_view("main")
-  self:update_geometry_recursive()
+  self:update("geometry_recursive")
   return self
 end
 
@@ -104,7 +104,7 @@ function win:resize(w, h)
   )
   self.abs_size[1] = math.floor(w / self.scale)
   self.abs_size[2] = math.floor(h / self.scale)
-  self:update_geometry_recursive()
+  self:update("geometry_recursive")
   return self
 end
 

@@ -13,7 +13,7 @@
     - [x] `on_draw`
     - [x] `on_hover`
     - [x] `on_click`
-    - [ ] `on_update`
+    - [x] `on_update`
     - [ ] Use `stack.pop()`
   - [ ] Text forms
   - [ ] Checkboxes

@@ -6,14 +6,14 @@ return {
   on_hover = function(self, on)
     if on then
       self.colors[1] = "grass"
-      self:update_colors()
+      self:update("colors")
       self.skin = "grass"
-      self:update_image()
+      self:update("image")
     else
       self.colors[1] = "red"
-      self:update_colors()
+      self:update("colors")
       self.skin = "red"
-      self:update_image()
+      self:update("image")
     end
   end,
   {
@@ -24,15 +24,15 @@ return {
     on_hover = function(self, on)
       if on then
         self[1].text = "Hi! :3"
-        self[1]:update()
+        self[1]:update("text")
       else
         self[1].text = "Bye! :<"
-        self[1]:update()
+        self[1]:update("text")
       end
     end,
     on_click = function(self, button)
       self[1].text = button
-      self[1]:update()
+      self[1]:update("text")
     end,
     {
       node = "text",
@@ -41,7 +41,7 @@ return {
       shadow = true,
       on_init = function(self)
         self.text = "Привет!?"
-        self:update()
+        self:update("text")
       end,
     },
   },

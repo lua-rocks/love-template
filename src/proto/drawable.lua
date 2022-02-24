@@ -29,6 +29,7 @@ local lg = love.graphics
 ---@field on_init? fun(self:src.proto.drawable)
 ---@field on_hover? fun(self:src.proto.drawable)
 ---@field on_click? fun(self:src.proto.drawable)
+---@field on_update? fun(self:src.proto.drawable, what:string)
 local Drawable = proto.set_name({}, "src.proto.drawable")
 
 function Drawable:init()
@@ -48,8 +49,8 @@ function Drawable:init()
   else
     self.abs_size = { 0, 0 }
   end
-  self:update_colors()
-  self:update_geometry()
+  self:update("colors")
+  self:update("geometry")
   if self.on_init then
     self:on_init()
   end
@@ -88,133 +89,135 @@ function Drawable:draw_recursive()
   return self
 end
 
-function Drawable:update_geometry()
-  self:update_size()
-  self:update_pos()
-  self:update_expand()
-  return self
-end
-
-function Drawable:update_geometry_recursive()
-  self:update_geometry()
-  for _, node in ipairs(self) do
-    node:update_geometry_recursive()
+---@param what string
+function Drawable:update(what)
+  if self.on_update then
+    self.on_update(self, what)
   end
-  return self
-end
-
-function Drawable:update_size()
-  if not self.size then
-    return self
-  end
-  local win = self.app.win
-  local parent = self.parent
-  for i = 1, 2 do
-    local size_i = self.size[i]
-    if type(size_i) == "string" then
-      local s1, n1, s2, n2 = size_i:match("(%D-)(%d+)(%D*)(%d*)")
-      n2 = tonumber(n2)
-      if s2 == "%" then
-        local prc = n1 * 0.01
-        n1 = math.floor(parent.abs_size[i] * prc)
-        if n2 then
-          n1 = math.floor(n1 / n2) * n2
+  if what == "size" then
+    if not self.size then
+      return self
+    end
+    local win = self.app.win
+    local parent = self.parent
+    for i = 1, 2 do
+      local size_i = self.size[i]
+      if type(size_i) == "string" then
+        local s1, n1, s2, n2 = size_i:match("(%D-)(%d+)(%D*)(%d*)")
+        n2 = tonumber(n2)
+        if s2 == "%" then
+          local prc = n1 * 0.01
+          n1 = math.floor(parent.abs_size[i] * prc)
+          if n2 then
+            n1 = math.floor(n1 / n2) * n2
+          end
+        elseif s2 == "x" then
+          n1 = n1 * n2
         end
-      elseif s2 == "x" then
-        n1 = n1 * n2
-      end
-      if s1 == "-" then
-        n1 = self.parent.abs_size[i] - n1
-      end
-      self.abs_size[i] = n1
-    elseif self ~= win then
-      self.abs_size[i] = size_i
-    end
-  end
-  return self
-end
-
-function Drawable:update_pos()
-  if not self.pos then
-    return self
-  end
-  local win = self.app.win
-  local parent = self.parent
-  for i = 1, 2 do
-    local self_pos_i = self.pos[i]
-    local parent_abs_pos_i = parent.abs_pos[i]
-    if type(self_pos_i) == "string" then
-      local s1, n1, s2, n2 = self_pos_i:match("(%D-)(%d+)(%D*)(%d*)")
-      n2 = tonumber(n2)
-      if s2 == "%" then
-        local prc = n1 * 0.01
-        n1 = math.floor(parent.abs_size[i] * prc - self.abs_size[i] * prc)
-        if n2 then
-          n1 = math.floor(n1 / n2) * n2
+        if s1 == "-" then
+          n1 = self.parent.abs_size[i] - n1
         end
-      elseif s2 == "x" then
-        n1 = n1 * n2
+        self.abs_size[i] = n1
+      elseif self ~= win then
+        self.abs_size[i] = size_i
       end
-      if s1 == "-" then
-        n1 = self.parent.abs_size[i] - n1
-      end
-      self.rel_pos[i] = n1
-      self.abs_pos[i] = n1 + parent_abs_pos_i
-    elseif self ~= win then
-      self.rel_pos[i] = self_pos_i
-      self.abs_pos[i] = self_pos_i + parent_abs_pos_i
     end
-  end
-  return self
-end
-
-function Drawable:update_expand()
-  if not self.expander then
     return self
   end
-  if type(self.expander) == "boolean" then
-    self.expander = { 0, 0 }
-  end
-  for i = 1, 2 do
-    if self.expander[i] ~= nil then
-      local size = self.rel_pos[i] + self.abs_size[i] + self.expander[i]
-      size = math.ceil(size / 4) * 4
-      if size > self.parent.abs_size[i] then
-        self.parent.abs_size[i] = size
-      end
-      local pos = self.parent.abs_pos[i] - self.abs_pos[i]
-      if pos > 0 then
-        self.parent.abs_pos[i] = self.parent.abs_pos[i] - pos
-        self.parent.abs_size[i] = self.parent.abs_size[i] + pos
+  if what == "pos" then
+    if not self.pos then
+      return self
+    end
+    local win = self.app.win
+    local parent = self.parent
+    for i = 1, 2 do
+      local self_pos_i = self.pos[i]
+      local parent_abs_pos_i = parent.abs_pos[i]
+      if type(self_pos_i) == "string" then
+        local s1, n1, s2, n2 = self_pos_i:match("(%D-)(%d+)(%D*)(%d*)")
+        n2 = tonumber(n2)
+        if s2 == "%" then
+          local prc = n1 * 0.01
+          n1 = math.floor(parent.abs_size[i] * prc - self.abs_size[i] * prc)
+          if n2 then
+            n1 = math.floor(n1 / n2) * n2
+          end
+        elseif s2 == "x" then
+          n1 = n1 * n2
+        end
+        if s1 == "-" then
+          n1 = self.parent.abs_size[i] - n1
+        end
+        self.rel_pos[i] = n1
+        self.abs_pos[i] = n1 + parent_abs_pos_i
+      elseif self ~= win then
+        self.rel_pos[i] = self_pos_i
+        self.abs_pos[i] = self_pos_i + parent_abs_pos_i
       end
     end
+    return self
   end
-  return self
-end
-
-function Drawable:update_colors()
-  self.colors = self.colors or { "white" }
-  self.abs_colors = {}
-  local pal = self.app.palettes
-  for key, color in pairs(self.colors) do
-    if type(color) == "string" then
-      local c, swap, by = string.match(color, "(.-)([%+%-])(%d+)")
-      if c and swap and by then
-        local i = pal.name_to_index[c]
-        by = tonumber(by)
-        if swap == "+" then
-          self.abs_colors[key] = pal[5 + by][i]
-        elseif swap == "-" then
-          self.abs_colors[key] = pal[5 - by][i]
+  if what == "expander" then
+    if not self.expander then
+      return self
+    end
+    if type(self.expander) == "boolean" then
+      self.expander = { 0, 0 }
+    end
+    for i = 1, 2 do
+      if self.expander[i] ~= nil then
+        local size = self.rel_pos[i] + self.abs_size[i] + self.expander[i]
+        size = math.ceil(size / 4) * 4
+        if size > self.parent.abs_size[i] then
+          self.parent.abs_size[i] = size
+        end
+        local pos = self.parent.abs_pos[i] - self.abs_pos[i]
+        if pos > 0 then
+          self.parent.abs_pos[i] = self.parent.abs_pos[i] - pos
+          self.parent.abs_size[i] = self.parent.abs_size[i] + pos
+        end
+      end
+    end
+    return self
+  end
+  if what == "colors" then
+    self.colors = self.colors or { "white" }
+    self.abs_colors = {}
+    local pal = self.app.palettes
+    for key, color in pairs(self.colors) do
+      if type(color) == "string" then
+        local c, swap, by = string.match(color, "(.-)([%+%-])(%d+)")
+        if c and swap and by then
+          local i = pal.name_to_index[c]
+          by = tonumber(by)
+          if swap == "+" then
+            self.abs_colors[key] = pal[5 + by][i]
+          elseif swap == "-" then
+            self.abs_colors[key] = pal[5 - by][i]
+          else
+            error("wrong color")
+          end
         else
-          error("wrong color")
+          self.abs_colors[key] = pal.name_to_color[color]
         end
-      else
-        self.abs_colors[key] = pal.name_to_color[color]
       end
     end
+    return self
   end
-  return self
+  if what == "geometry" then
+    self:update("size")
+    self:update("pos")
+    self:update("expander")
+    return self
+  end
+  if what == "geometry_recursive" then
+    self:update("geometry")
+    for _, node in ipairs(self) do
+      node:update("geometry_recursive")
+    end
+    return self
+  end
+  error("Cannot update " .. tostring(what))
 end
 
 return Drawable

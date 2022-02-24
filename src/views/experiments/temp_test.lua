@@ -15,6 +15,9 @@ local rect = {
   size = { "16x8", "2x8" },
   skin = "orange",
   text,
+  on_update = function(self, what)
+    log.debug(what, inspect(self.abs_size))
+  end,
 }
 
 return rect

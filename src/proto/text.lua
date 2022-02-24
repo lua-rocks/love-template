@@ -15,15 +15,22 @@ function Text:init()
     end
   end
   Drawable.init(self)
-  self:update()
+  self:update("text")
   return self
 end
 
-function Text:update()
-  self.text_obj = lg.newText(self.parent.app.fonts.current, self.text)
-  self.abs_size = { self.text_obj:getDimensions() }
-  self:update_geometry()
-  return self
+---@param what string
+function Text:update(what)
+  if self.on_update then
+    self.on_update(self, what)
+  end
+  if what == "text" then
+    self.text_obj = lg.newText(self.parent.app.fonts.current, self.text)
+    self.abs_size = { self.text_obj:getDimensions() }
+    self:update("geometry")
+    return self
+  end
+  return Drawable.update(self, what)
 end
 
 function Text:draw()
