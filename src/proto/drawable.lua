@@ -17,6 +17,7 @@ local lg = love.graphics
 ---@field abs_size {[1]:number, [2]:number} Set it to nil to reload from `size`.
 ---@field abs_pos {[1]:number, [2]:number}
 ---@field rel_pos {[1]:number, [2]:number}
+---@field updaters table<string, function>
 ---@field pos? {[1]:number|string, [2]:number|string}
 ---@field size? {[1]:number|string, [2]:number|string}
 ---@field colors? table<integer|string,string> Named colors.
@@ -33,72 +34,7 @@ local lg = love.graphics
 ---@field tags? string[]
 local Drawable = proto.set_name({}, "src.proto.drawable")
 
-function Drawable:init()
-  local parent = self.parent
-  self.app = parent.app or parent ---@type src.app
-  table.insert(parent, self)
-  self.root = parent.root or self
-  if not self.pos then
-    self.rel_pos = { 0, 0 }
-    self.abs_pos = self.parent.abs_pos
-  else
-    self.rel_pos = proto.copy(self.pos)
-    self.abs_pos = proto.copy(self.rel_pos)
-  end
-  if self.size then
-    self.abs_size = proto.copy(self.size)
-  else
-    self.abs_size = { 0, 0 }
-  end
-  self:update("colors")
-  self:update("geometry")
-  if self.on_init then
-    self:on_init()
-  end
-  return self
-end
-
-function Drawable:draw()
-  if self.abs_colors and self.abs_colors[1] then
-    lg.setColor(unpack(self.abs_colors[1]))
-  else
-    lg.setColor(1, 1, 1)
-  end
-  if self.on_draw then
-    self:on_draw()
-  end
-  return self
-end
-
-function Drawable:draw_recursive()
-  self:draw()
-  local function draw_nodes()
-    for _, node in ipairs(self) do
-      node:draw_recursive()
-    end
-  end
-  if self.closed then
-    local x, y = unpack(self.abs_pos)
-    local w, h = unpack(self.abs_size)
-    local s = self.app.win.scale
-    lg.setScissor(x * s, y * s, w * s, h * s)
-    draw_nodes()
-    lg.setScissor()
-  else
-    draw_nodes()
-  end
-  return self
-end
-
----@alias src.proto.drawable-updaters
----|'"size"'
----|'"pos"'
----|'"expander"'
----|'"colors"'
----|'"geometry"'
----|'"geometry_recursive"''
-
-local updaters = {
+Drawable.updaters = {
   size = function(self)
     if not self.size then
       return self
@@ -226,12 +162,71 @@ local updaters = {
   end,
 }
 
----@param what src.proto.drawable-updaters
+function Drawable:init()
+  local parent = self.parent
+  self.app = parent.app or parent ---@type src.app
+  table.insert(parent, self)
+  self.root = parent.root or self
+  if not self.pos then
+    self.rel_pos = { 0, 0 }
+    self.abs_pos = self.parent.abs_pos
+  else
+    self.rel_pos = proto.copy(self.pos)
+    self.abs_pos = proto.copy(self.rel_pos)
+  end
+  if self.size then
+    self.abs_size = proto.copy(self.size)
+  else
+    self.abs_size = { 0, 0 }
+  end
+  self:update("colors")
+  self:update("geometry")
+  if self.on_init then
+    self:on_init()
+  end
+  return self
+end
+
+function Drawable:draw()
+  if self.abs_colors and self.abs_colors[1] then
+    lg.setColor(unpack(self.abs_colors[1]))
+  else
+    lg.setColor(1, 1, 1)
+  end
+  if self.on_draw then
+    self:on_draw()
+  end
+  return self
+end
+
+function Drawable:draw_recursive()
+  self:draw()
+  local function draw_nodes()
+    for _, node in ipairs(self) do
+      node:draw_recursive()
+    end
+  end
+  if self.closed then
+    local x, y = unpack(self.abs_pos)
+    local w, h = unpack(self.abs_size)
+    local s = self.app.win.scale
+    lg.setScissor(x * s, y * s, w * s, h * s)
+    draw_nodes()
+    lg.setScissor()
+  else
+    draw_nodes()
+  end
+  return self
+end
+
 function Drawable:update(what)
-  if updaters[what] then
-    updaters[what](self)
-    if self.on_update then
-      self.on_update(self, what)
+  for parent in proto.parents(self) do
+    if parent.updaters and parent.updaters[what] then
+      parent.updaters[what](self)
+      if self.on_update then
+        self.on_update(self, what)
+      end
+      return self
     end
   end
   return self

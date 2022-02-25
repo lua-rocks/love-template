@@ -64,6 +64,7 @@
       abs_size: table
       abs_pos: table
       rel_pos: table
+      updaters: table
       |
       pos?: table
       size?: table
@@ -189,6 +190,7 @@
   <text x="172.5" y="1057" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_size: table</text>
   <text x="172.5" y="1072" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_pos: table</text>
   <text x="172.5" y="1087" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">rel_pos: table</text>
+  <text x="172.5" y="1102" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">updaters: table</text>
   <text x="422.5" y="1012" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">pos?: table</text>
   <text x="422.5" y="1027" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">size?: table</text>
   <text x="422.5" y="1042" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">colors?: table</text>

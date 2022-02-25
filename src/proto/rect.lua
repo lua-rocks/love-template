@@ -6,19 +6,7 @@ local Drawable = require("src.proto.drawable")
 ---@field image? love.Drawable|string
 local Rect = proto.link({}, Drawable, "src.proto.rect")
 
-function Rect:init()
-  if self.skin and not self.colors then
-    self.colors = { self.skin }
-  end
-  Drawable.init(self)
-  self:update("image")
-  return self
-end
-
----@alias src.proto.rect-updaters
----|'"image"'
-
-local updaters = {
+Rect.updaters = {
   image = function(self)
     if type(self.image) == "string" then
       self.image = lg.newImage(self.image)
@@ -47,22 +35,19 @@ local updaters = {
     return self
   end,
   size = function(self)
-    Drawable.update(self, "size")
-    self:update("image")
+    Drawable.updaters.size(self)
+    Rect.updaters.image(self)
     return self
   end,
 }
 
----@param what src.proto.drawable-updaters|src.proto.rect-updaters
-function Rect:update(what)
-  if updaters[what] then
-    updaters[what](self)
-    if self.on_update then
-      self.on_update(self, what)
-    end
-    return self
+function Rect:init()
+  if self.skin and not self.colors then
+    self.colors = { self.skin }
   end
-  return Drawable.update(self, what)
+  Drawable.init(self)
+  self:update("image")
+  return self
 end
 
 function Rect:draw()

@@ -63,6 +63,7 @@
       abs_size: table
       abs_pos: table
       rel_pos: table
+      updaters: table
       |
       pos?: table
       size?: table
