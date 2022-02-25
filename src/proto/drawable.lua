@@ -8,9 +8,7 @@ local lg = love.graphics
 ---+ "-5" = parent's value -5;
 ---+ "+5" or "5" = 5.
 ---
----FIXME:
----
----+ In "expander" values are currently always rounded by 4.
+---FIXME: In "expander" values are currently always rounded by 4.
 ---
 ---@class src.proto.drawable
 ---@field app src.app

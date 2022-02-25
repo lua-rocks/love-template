@@ -70,6 +70,9 @@
       abs_colors?: table
       closed?: boolean
       expander?: boolean
+      id?: string
+      name?: string
+      tags?: table
       ||
       init()
       draw()

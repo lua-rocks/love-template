@@ -71,6 +71,9 @@
       abs_colors?: table
       closed?: boolean
       expander?: boolean
+      id?: string
+      name?: string
+      tags?: table
       ||
       init()
       draw()
@@ -192,6 +195,9 @@
   <text x="422.5" y="1057" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">abs_colors?: table</text>
   <text x="422.5" y="1072" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">closed?: boolean</text>
   <text x="422.5" y="1087" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">expander?: boolean</text>
+  <text x="422.5" y="1102" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">id?: string</text>
+  <text x="422.5" y="1117" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">name?: string</text>
+  <text x="422.5" y="1132" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">tags?: table</text>
   <text x="172.5" y="1163" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">init()</text>
   <text x="172.5" y="1178" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">draw()</text>
   <text x="172.5" y="1193" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="drawable">draw_recursive()</text>
