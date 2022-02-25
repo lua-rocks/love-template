@@ -90,7 +90,7 @@ function Drawable:draw_recursive()
   return self
 end
 
----@alias src.proto.drawable-what
+---@alias src.proto.drawable-updaters
 ---|'"size"'
 ---|'"pos"'
 ---|'"expander"'
@@ -98,12 +98,8 @@ end
 ---|'"geometry"'
 ---|'"geometry_recursive"''
 
----@param what src.proto.drawable-what
-function Drawable:update(what)
-  if self.on_update then
-    self.on_update(self, what)
-  end
-  if what == "size" then
+local updaters = {
+  size = function(self)
     if not self.size then
       return self
     end
@@ -134,8 +130,8 @@ function Drawable:update(what)
       end
     end
     return self
-  end
-  if what == "pos" then
+  end,
+  pos = function(self)
     if not self.pos then
       return self
     end
@@ -167,8 +163,8 @@ function Drawable:update(what)
       end
     end
     return self
-  end
-  if what == "expander" then
+  end,
+  expander = function(self)
     if not self.expander then
       return self
     end
@@ -190,8 +186,8 @@ function Drawable:update(what)
       end
     end
     return self
-  end
-  if what == "colors" then
+  end,
+  colors = function(self)
     self.colors = self.colors or { "white" }
     self.abs_colors = {}
     local pal = self.app.palettes
@@ -214,20 +210,31 @@ function Drawable:update(what)
       end
     end
     return self
-  end
-  if what == "geometry" then
+  end,
+  geometry = function(self)
     self:update("size")
     self:update("pos")
     self:update("expander")
     return self
-  end
-  if what == "geometry_recursive" then
+  end,
+  geometry_recursive = function(self)
     self:update("geometry")
     for _, node in ipairs(self) do
       node:update("geometry_recursive")
     end
     return self
+  end,
+}
+
+---@param what src.proto.drawable-updaters
+function Drawable:update(what)
+  if updaters[what] then
+    updaters[what](self)
+    if self.on_update then
+      self.on_update(self, what)
+    end
   end
+  return self
 end
 
 return Drawable

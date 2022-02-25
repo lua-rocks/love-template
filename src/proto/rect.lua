@@ -15,15 +15,11 @@ function Rect:init()
   return self
 end
 
----@alias src.proto.rect-what
+---@alias src.proto.rect-updaters
 ---|'"image"'
 
----@param what src.proto.drawable-what|src.proto.rect-what
-function Rect:update(what)
-  if self.on_update then
-    self.on_update(self, what)
-  end
-  if what == "image" then
+local updaters = {
+  image = function(self)
     if type(self.image) == "string" then
       self.image = lg.newImage(self.image)
       return self
@@ -49,10 +45,21 @@ function Rect:update(what)
       self.image = batch
     end
     return self
-  end
-  if what == "size" then
+  end,
+  size = function(self)
     Drawable.update(self, "size")
     self:update("image")
+    return self
+  end,
+}
+
+---@param what src.proto.drawable-updaters|src.proto.rect-updaters
+function Rect:update(what)
+  if updaters[what] then
+    updaters[what](self)
+    if self.on_update then
+      self.on_update(self, what)
+    end
     return self
   end
   return Drawable.update(self, what)

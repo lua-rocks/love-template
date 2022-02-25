@@ -19,18 +19,25 @@ function Text:init()
   return self
 end
 
----@alias src.proto.text-what
+---@alias src.proto.text-updaters
 ---|'"text"'
 
----@param what src.proto.drawable-what|src.proto.text-what
-function Text:update(what)
-  if self.on_update then
-    self.on_update(self, what)
-  end
-  if what == "text" then
+local updaters = {
+  text = function(self)
     self.text_obj = lg.newText(self.parent.app.fonts.current, self.text)
     self.abs_size = { self.text_obj:getDimensions() }
     self:update("geometry")
+    return self
+  end,
+}
+
+---@param what src.proto.drawable-updaters|src.proto.text-updaters
+function Text:update(what)
+  if updaters[what] then
+    updaters[what](self)
+    if self.on_update then
+      self.on_update(self, what)
+    end
     return self
   end
   return Drawable.update(self, what)
