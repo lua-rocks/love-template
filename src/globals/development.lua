@@ -24,4 +24,7 @@ if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" then
   require("lldebugger").start()
 end
 
+-- require("jit.p").start("lv", "log/jit.log")
+require("jit.p").start("l")
+
 log.info("Initialized in development mode.")
