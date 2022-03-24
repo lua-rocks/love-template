@@ -4,7 +4,7 @@ local Drawable = require("src.proto.drawable")
 ---@class src.proto.text:src.proto.drawable
 ---@field text string
 ---@field text_obj? love.Text
----@field wrap? boolean
+---@field wrap? boolean -- XXX
 ---@field shadow? boolean
 local Text = proto.link({}, Drawable, "src.proto.text")
 

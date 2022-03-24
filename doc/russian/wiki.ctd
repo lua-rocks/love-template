@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Шаблон Любви" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="108" is_bold="0" foreground="#e75c5c" ts_creation="1648076505" ts_lastsave="1648076934">
+    <node name="src" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648076926" ts_lastsave="1648077401">
+      <rich_text scale="h1">Исходники</rich_text>
+      <node name="app" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648077051" ts_lastsave="1648080503">
+        <rich_text scale="h1">Приложение</rich_text>
+        <rich_text>
+
+Здесь содержатся компоненты приложения (простые или собранные из </rich_text>
+        <rich_text link="node 6">прототипов</rich_text>
+        <rich_text>).</rich_text>
+        <node name="fonts" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648078031" ts_lastsave="1648082541">
+          <rich_text scale="h1">Шрифты</rich_text>
+          <rich_text>
+
+Таблица со всеми шрифтами, используемыми в приложении.
+
+</rich_text>
+          <rich_text scale="h2">Поля</rich_text>
+          <rich_text>
+
+• </rich_text>
+          <rich_text weight="heavy">current</rich_text>
+          <rich_text> : </rich_text>
+          <rich_text link="webs https://love2d.org/wiki/Font">love.Font</rich_text>
+          <rich_text> - Активный на данный момент шрифт.
+• </rich_text>
+          <rich_text weight="heavy">normal</rich_text>
+          <rich_text> : </rich_text>
+          <rich_text link="webs https://love2d.org/wiki/Font">love.Font</rich_text>
+          <rich_text> - Стандартный шрифт.
+• </rich_text>
+          <rich_text weight="heavy">bold</rich_text>
+          <rich_text> : </rich_text>
+          <rich_text link="webs https://love2d.org/wiki/Font">love.Font</rich_text>
+          <rich_text> - Жирный шрифт.
+
+</rich_text>
+          <rich_text scale="h2">Методы</rich_text>
+          <rich_text>
+
+• </rich_text>
+          <rich_text weight="heavy">init</rich_text>
+          <rich_text>() - Инициализирует себя.
+• </rich_text>
+          <rich_text weight="heavy">switch</rich_text>
+          <rich_text>(name) - Переключает активный шрифт.
+   • </rich_text>
+          <rich_text weight="heavy">name</rich_text>
+          <rich_text> : string - Имя шрифта (</rich_text>
+          <rich_text family="monospace">normal</rich_text>
+          <rich_text>, </rich_text>
+          <rich_text family="monospace">bold</rich_text>
+          <rich_text>, итд).
+</rich_text>
+        </node>
+        <node name="palettes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648079221" ts_lastsave="1648085348">
+          <rich_text scale="h1">Палитры</rich_text>
+          <rich_text>
+
+Эта таблица предназначена для хранения палитр цветов, являющихся оттенками одного и того же цвета, по этому имена цветов и их индексы общие для всех палитр.
+
+</rich_text>
+          <rich_text scale="h2">Поля</rich_text>
+          <rich_text>
+
+• </rich_text>
+          <rich_text weight="heavy">main</rich_text>
+          <rich_text> : lib.image.palette - Главная палитра.
+• </rich_text>
+          <rich_text weight="heavy">name_to_color</rich_text>
+          <rich_text> : table&lt;string, lib.image.color&gt; - Таблица, в которой по ключу с </rich_text>
+          <rich_text weight="heavy">именем</rich_text>
+          <rich_text> цвета содержится этот </rich_text>
+          <rich_text weight="heavy">цвет</rich_text>
+          <rich_text>.
+• </rich_text>
+          <rich_text weight="heavy">name_to_index</rich_text>
+          <rich_text> : table&lt;string, integer&gt; - Таблица, в которой по ключу с </rich_text>
+          <rich_text weight="heavy">именем</rich_text>
+          <rich_text> цвета содержится </rich_text>
+          <rich_text weight="heavy">индекс</rich_text>
+          <rich_text> цвета.
+• </rich_text>
+          <rich_text weight="heavy">names</rich_text>
+          <rich_text> : string[] - Массив с </rich_text>
+          <rich_text weight="heavy">именами</rich_text>
+          <rich_text> цветов.
+• ... integer : lib.image.palette - Другие палитры.
+
+</rich_text>
+          <rich_text scale="h2">Методы</rich_text>
+          <rich_text>
+
+• </rich_text>
+          <rich_text weight="heavy">init</rich_text>
+          <rich_text>(main_index?) - Инициализирует себя.
+   • </rich_text>
+          <rich_text weight="heavy">main_index</rich_text>
+          <rich_text>? : integer = </rich_text>
+          <rich_text family="monospace">5</rich_text>
+          <rich_text> - Индекс палитры, используемой в качестве главной.
+
+</rich_text>
+          <rich_text scale="h2">Цвета</rich_text>
+          <rich_text>
+
+Каждая горизонтальная линия на изображении соответствует палитре. Пятая линия - главная.
+
+
+
+Индексы и имена:
+
+</rich_text>
+          <rich_text family="monospace" background="#dedeeeeed6d6" foreground="#14140c0c1c1c">1.  white                     </rich_text>
+          <rich_text family="monospace" foreground="#14140c0c1c1c">
+</rich_text>
+          <rich_text family="monospace" background="#85859595a1a1" foreground="#14140c0c1c1c">2.  silver                    </rich_text>
+          <rich_text family="monospace" foreground="#14140c0c1c1c">
+</rich_text>
+          <rich_text family="monospace" background="#4e4e4a4a4e4e" foreground="#dedeeeeed6d6">3.  gray   </rich_text>
+          <rich_text family="monospace" background="#4e4e4a4a4e4e" foreground="#14140c0c1c1c">                   </rich_text>
+          <rich_text family="monospace" foreground="#14140c0c1c1c">
+</rich_text>
+          <rich_text family="monospace" background="#757571716161" foreground="#dedeeeeed6d6">4.  rock                      </rich_text>
+          <rich_text family="monospace" foreground="#dedeeeeed6d6">
+</rich_text>
+          <rich_text family="monospace" background="#303034346d6d" foreground="#dedeeeeed6d6">5.  blue                      </rich_text>
+          <rich_text family="monospace" foreground="#dedeeeeed6d6">
+</rich_text>
+          <rich_text family="monospace" background="#59587d7ccece" foreground="#14140c0c1c1c">6.  water                     </rich_text>
+          <rich_text family="monospace" foreground="#14140c0c1c1c">
+</rich_text>
+          <rich_text family="monospace" background="#6d6dc2c2caca" foreground="#14140c0c1c1c">7.  cyan  </rich_text>
+          <rich_text family="monospace" background="#6d6dc2c2caca" foreground="#dedeeeeed6d6">                    </rich_text>
+          <rich_text family="monospace" foreground="#dedeeeeed6d6">
+</rich_text>
+          <rich_text family="monospace" background="#6d6caaaa2c2b" foreground="#14140c0c1c1c">8.  grass </rich_text>
+          <rich_text family="monospace" background="#6d6caaaa2c2b" foreground="#dedeeeeed6d6">                    </rich_text>
+          <rich_text family="monospace" foreground="#dedeeeeed6d6">
+</rich_text>
+          <rich_text family="monospace" background="#343465652424" foreground="#dedeeeeed6d6">9.  green                     </rich_text>
+          <rich_text family="monospace" foreground="#dedeeeeed6d6">
+</rich_text>
+          <rich_text family="monospace" background="#85854c4c3030" foreground="#dedeeeeed6d6">10. wood                      </rich_text>
+          <rich_text family="monospace" foreground="#dedeeeeed6d6">
+</rich_text>
+          <rich_text family="monospace" background="#d2d27d7d2c2c" foreground="#14140c0c1c1c">11. orange </rich_text>
+          <rich_text family="monospace" background="#d2d27d7d2c2c" foreground="#dedeeeeed6d6">                   </rich_text>
+          <rich_text family="monospace" foreground="#dedeeeeed6d6">
+</rich_text>
+          <rich_text family="monospace" background="#dadad4d45e5e" foreground="#14140c0c1c1c">12. yellow                    </rich_text>
+          <rich_text family="monospace" foreground="#14140c0c1c1c">
+</rich_text>
+          <rich_text family="monospace" background="#d2d2aaaa9999" foreground="#14140c0c1c1c">13. pink  </rich_text>
+          <rich_text family="monospace" background="#d2d2aaaa9999" foreground="#dedeeeeed6d6">                    </rich_text>
+          <rich_text family="monospace" foreground="#dedeeeeed6d6">
+</rich_text>
+          <rich_text family="monospace" background="#d0d046464848" foreground="#14140c0c1c1c">14. red </rich_text>
+          <rich_text family="monospace" background="#d0d046464848" foreground="#dedeeeeed6d6"> </rich_text>
+          <rich_text family="monospace" background="#d0d046464848" foreground="#14140c0c1c1c">                     </rich_text>
+          <rich_text family="monospace" foreground="#14140c0c1c1c">
+</rich_text>
+          <rich_text family="monospace" background="#444424243433" foreground="#dedeeeeed6d6">15. brown  </rich_text>
+          <rich_text family="monospace" background="#444424243433" foreground="#14140c0c1c1c"> </rich_text>
+          <rich_text family="monospace" background="#444424243433" foreground="#d2d2aaaa9999">                  </rich_text>
+          <rich_text family="monospace" foreground="#14140c0c1c1c">
+</rich_text>
+          <rich_text family="monospace" background="#14140c0c1c1c" foreground="#dedeeeeed6d6">16. black                     </rich_text>
+          <encoded_png char_offset="776" justification="left" link="">iVBORw0KGgoAAAANSUhEUgAAAIAAAABICAYAAAA+hf0SAAAABHNCSVQICAgIfAhkiAAAAftJREFUeJzt3bFqk2EUgOE/JYNDhg4dQvEGAga69w4Kzdq5gxcgdPAS3BxcBceMvYAKEQstRRBBCA2WIEX0J0Tp0CGDpK6CcA71608g7/ush/x8w8sH5+vQ1vTX+K4S1saqD6DVMgA4A4AzADgDgDMAOAOAa6/6AGrW7dvTcO4NAGcAcAYAZwBwBgBnAHAGANf4O8Bw+CGc1/1eOH/2pPOQx/nH7+8vin7f3n7+QCf5P9mev3x9HM69AeAMAM4A4AwAzgDgDADOAOCK3wGyPf/m6l04n9f9cP6yug3n2TtBtue/Gn8M508/h+Pq0UH8/dJ3gtI9/2g6D+feAHAGAGcAcAYAZwBwBgBnAHDpO0Dpnj+Z/Azn17M34bxXHYbz7J2gquM9//xkEc67P+J3hv0q/n72TrAY74bz0j3/U12Hc28AOAOAMwA4A4AzADgDgDMAuHbTe/7Z+3hPrpI9OpO9E3yp4z3/6zCej7qb9z7T37J3guXFLJyX7vkZbwA4A4AzADgDgDMAOAOAMwC4dvN7fplvl/Hfw/Pfx3t+Jt+zu0XfHzW852e8AeAMAM4A4AwAzgDgDADOAOBag71B+H8Dm97z191ON34naHrPz3gDwBkAnAHAGQCcAcAZAJwBwLW2Oo/DdwCtN28AOAOAMwA4A4AzADgDgDMAuD9duXxpkgdPkQAAAABJRU5ErkJggg==</encoded_png>
+        </node>
+        <node name="skins" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648079455" ts_lastsave="1648079532">
+          <rich_text scale="h1">Скины</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text scale="h2">Поля</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text scale="h2">Методы</rich_text>
+        </node>
+        <node name="stack" unique_id="11" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648079554" ts_lastsave="1648079656">
+          <rich_text scale="h1">Стек</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text scale="h2">Поля</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text scale="h2">Методы</rich_text>
+        </node>
+        <node name="win" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648079672" ts_lastsave="1648080336">
+          <rich_text scale="h1">Окно</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text scale="h2">Поля</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text scale="h2">Методы</rich_text>
+        </node>
+      </node>
+      <node name="proto" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648077378" ts_lastsave="1648080542">
+        <rich_text scale="h1">Прототипы</rich_text>
+        <rich_text>
+
+Прототипы (или </rich_text>
+        <rich_text style="italic">Классы</rich_text>
+        <rich_text>) являются кирпичиками нашего приложения. В коде они всегда пишутся с заглавной буквы.</rich_text>
+      </node>
+      <node name="globals" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648077092" ts_lastsave="1648077927">
+        <rich_text scale="h1">Глобальные настройки приложения</rich_text>
+        <rich_text>
+
+Этот модуль подключается через файл </rich_text>
+        <rich_text family="monospace">development.lua</rich_text>
+        <rich_text> или </rich_text>
+        <rich_text family="monospace">production.lua</rich_text>
+        <rich_text> (в зависимости от режима) и объявляет все глобальные переменные, используемые нашей программой. Объявлять их из других мест запрещается.</rich_text>
+      </node>
+      <node name="views" unique_id="7" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648077401" ts_lastsave="1648077948">
+        <rich_text scale="h1">Сцены</rich_text>
+        <rich_text>
+
+Здесь содержатся сцены приложения, описывающие пользовательский интерфейс и игровой мир в различных его состояниях. Стартовой считается сцена </rich_text>
+        <rich_text family="monospace">main.lua</rich_text>
+        <rich_text>.</rich_text>
+      </node>
+    </node>
+    <node name="lib" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648076934" ts_lastsave="1648077156">
+      <rich_text scale="h1">Библиотеки</rich_text>
+    </node>
+  </node>
+</cherrytree>

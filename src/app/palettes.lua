@@ -9,8 +9,9 @@ local palettes = require("lib.image.palettes.load")(
   "res/img/palettes/db16/db16.png"
 )
 
-function palettes:init()
-  self.main = self[5]
+---@param main_index? integer (5)
+function palettes:init(main_index)
+  self.main = self[main_index or 5]
   self.name_to_color = {}
   self.name_to_index = {}
   self.names = {
@@ -31,9 +32,9 @@ function palettes:init()
     "brown",
     "black",
   }
-  for index, name in ipairs(self.names) do
-    self.name_to_color[name] = self.main[index]
-    self.name_to_index[name] = index
+  for i, name in ipairs(self.names) do
+    self.name_to_color[name] = self.main[i]
+    self.name_to_index[name] = i
   end
   return self
 end

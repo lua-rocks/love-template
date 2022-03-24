@@ -13,6 +13,6 @@ new_globals = {
   "log",
 }
 
-exclude_files = { "**/.*", "git/**" }
+exclude_files = { "**/.**", "git/**" }
 
 std = "max"

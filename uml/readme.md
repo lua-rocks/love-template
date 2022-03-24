@@ -1,4 +1,4 @@
 # UML
 
-There is stored the entire architecture of the application in the
-[nomnoml](www.nomnoml.com) format. The.
+There is stored the entire application architecture in the
+[nomnoml](https://www.nomnoml.com) format.
