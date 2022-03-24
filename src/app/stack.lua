@@ -14,7 +14,7 @@ function stack:push(drawable)
 end
 
 ---@param element src.proto.drawable|integer
----@return integer|src.proto.drawable index or `nil` if failed.
+---@return integer|src.proto.drawable|nil index
 function stack:pop(element)
   if type(element) == "number" then
     self[element] = nil
