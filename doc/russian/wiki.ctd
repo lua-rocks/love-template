@@ -215,7 +215,7 @@
         <rich_text>
 
 Таблица со “шкурками” для всего рисуемого.</rich_text>
-        <node name="(string)" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648277880" ts_lastsave="1648278053">
+        <node name="(string)" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648277880" ts_lastsave="1648284516">
           <rich_text scale="h1">(string) : </rich_text>
           <rich_text link="node 15" scale="h1">src.proto.skin</rich_text>
           <rich_text>
@@ -234,7 +234,9 @@
 
 Многоцветная часть GUI для прямоугольников.
 
-Варианты цветов (marks): "</rich_text>
+Варианты цветов (</rich_text>
+          <rich_text link="node 77">marks</rich_text>
+          <rich_text>): "</rich_text>
           <rich_text family="monospace" background="#d0d046464848" foreground="#14140c0c1c1c">red</rich_text>
           <rich_text>", "</rich_text>
           <rich_text family="monospace" background="#d2d27d7d2c2c" foreground="#14140c0c1c1c">orange</rich_text>
@@ -671,7 +673,7 @@
 
 Вложенные узлы (в порядке Z-индекса).</rich_text>
         </node>
-        <node name="init" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648271931" ts_lastsave="1648276811">
+        <node name="init" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648271931" ts_lastsave="1648285187">
           <rich_text scale="h1">init(self) : self</rich_text>
           <rich_text>
 
@@ -744,16 +746,135 @@
           <rich_text>.</rich_text>
         </node>
       </node>
-      <node name="rect" unique_id="14" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241592" ts_lastsave="1648280877">
+      <node name="rect" unique_id="14" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241592" ts_lastsave="1648283664">
         <rich_text link="file Li4vLi4vc3JjL3Byb3RvL3JlY3QubHVh" scale="h1">src.proto.rect</rich_text>
         <rich_text scale="h1"> : </rich_text>
         <rich_text link="node 13" scale="h1">src.proto.drawable</rich_text>
+        <rich_text>
+
+Прямоугольник.</rich_text>
+        <node name="skin?" unique_id="71" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648283692" ts_lastsave="1648283761">
+          <rich_text scale="h1">skin? : </rich_text>
+          <rich_text link="node 46" scale="h1">string</rich_text>
+        </node>
+        <node name="image?" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648283761" ts_lastsave="1648283909">
+          <rich_text scale="h1">image? : love.Drawable | string</rich_text>
+          <rich_text>
+
+Изображение, используемое для задника прямоугольника. Если скин задан, то это изобржение соберётся из него.</rich_text>
+        </node>
       </node>
-      <node name="skin" unique_id="15" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241599" ts_lastsave="1648278663">
+      <node name="skin" unique_id="15" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241599" ts_lastsave="1648285043">
         <rich_text link="file Li4vLi4vc3JjL3Byb3RvL3NraW4ubHVh" scale="h1">src.proto.skin</rich_text>
+        <rich_text>
+
+Шкурка для </rich_text>
+        <rich_text link="node 13">рисуемого</rich_text>
+        <rich_text>.</rich_text>
+        <node name="image" unique_id="73" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648284364" ts_lastsave="1648285003">
+          <rich_text scale="h1">image : love.Image</rich_text>
+          <rich_text>
+
+Готовое изображение скина.</rich_text>
+        </node>
+        <node name="file?" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648284378" ts_lastsave="1648284975">
+          <rich_text scale="h1">file? : string</rich_text>
+          <rich_text>
+
+Путь к картинке.</rich_text>
+        </node>
+        <node name="data?" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648284396" ts_lastsave="1648285052">
+          <rich_text scale="h1">data? : love.ImageData</rich_text>
+          <rich_text>
+
+Сырое изображение скина.</rich_text>
+        </node>
+        <node name="grid?" unique_id="76" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648284420" ts_lastsave="1648284618">
+          <rich_text scale="h1">grid? : </rich_text>
+          <rich_text underline="single" scale="h1">lib.image.grid</rich_text>
+          <rich_text>
+
+Если грид не указан, он будет создан размером 4x4.</rich_text>
+        </node>
+        <node name="marks?" unique_id="77" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648284450" ts_lastsave="1648284898">
+          <rich_text scale="h1">marks? : table&lt;any, { [1] : integer, [2] : integer }&gt;</rich_text>
+          <rich_text>
+
+Отметки для быстрого переключения через </rich_text>
+          <rich_text weight="heavy">grid.grid_pos</rich_text>
+          <rich_text>:
+
+
+
+Эта таблица содержит позицию на гриде, привязанную к любому ключу (например ключу “red”, как в примере выше).</rich_text>
+          <codebox char_offset="111" justification="left" frame_width="90" frame_height="1" width_in_pixels="0" syntax_highlighting="lua" highlight_brackets="1" show_line_numbers="1">grid.grid_pos = skin.marks["red"]</codebox>
+        </node>
+        <node name="init" unique_id="78" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648285187" ts_lastsave="1648285246">
+          <rich_text scale="h1">init(self) : self</rich_text>
+          <rich_text>
+
+Инициализирует себя.</rich_text>
+        </node>
+        <node name="recolor_part" unique_id="79" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648285246" ts_lastsave="1648285817">
+          <rich_text scale="h1">recolor_part(self, pos, size, pal, all_pals, names?) : src.proto.skin</rich_text>
+          <rich_text>
+
+Создаёт новый разноцветный скин на основе части себя.
+
+</rich_text>
+          <rich_text scale="h2">pos : {[1] : integer, [2] : integer}</rich_text>
+          <rich_text>
+
+Позиция части в квадах.
+
+</rich_text>
+          <rich_text scale="h2">size : {[1] : integer, [2] : integer}</rich_text>
+          <rich_text>
+
+Размер части в квадах.
+
+</rich_text>
+          <rich_text scale="h2">pal : </rich_text>
+          <rich_text underline="single" scale="h2">lib.image.palette</rich_text>
+          <rich_text>
+
+Палитра.
+
+</rich_text>
+          <rich_text scale="h2">all_pals : </rich_text>
+          <rich_text underline="single" scale="h2">lib.image.palettes</rich_text>
+          <rich_text>
+
+Все палитры.
+
+</rich_text>
+          <rich_text scale="h2">names? : string[]</rich_text>
+          <rich_text>
+
+Имена </rich_text>
+          <rich_text link="node 77">отметок</rich_text>
+          <rich_text> для переключения между частями.</rich_text>
+        </node>
       </node>
-      <node name="text" unique_id="16" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241608" ts_lastsave="1648278671">
+      <node name="text" unique_id="16" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241608" ts_lastsave="1648285883">
         <rich_text link="file Li4vLi4vc3JjL3Byb3RvL3RleHQubHVh" scale="h1">src.proto.text</rich_text>
+        <rich_text scale="h1"> : </rich_text>
+        <rich_text link="node 13" scale="h1">src.proto.drawable</rich_text>
+        <rich_text>
+
+</rich_text>
+        <node name="text" unique_id="80" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648285901" ts_lastsave="1648285927">
+          <rich_text scale="h1">text : string</rich_text>
+        </node>
+        <node name="text_obj?" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648285927" ts_lastsave="1648285947">
+          <rich_text scale="h1">text_obj? : love.Text</rich_text>
+        </node>
+        <node name="wrap?" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648285947" ts_lastsave="1648285965">
+          <rich_text scale="h1">wrap? : boolean</rich_text>
+        </node>
+        <node name="shadow?" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648285965" ts_lastsave="1648285975">
+          <rich_text scale="h1">shadow? : boolean</rich_text>
+        </node>
       </node>
     </node>
     <node name="globals" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#204a87" ts_creation="1648077092" ts_lastsave="1648277037">

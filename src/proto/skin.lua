@@ -29,11 +29,12 @@ function Skin:init()
 end
 
 ---Create new multicolor skin, based on self's subpart.
----@param pos_in_quads? {[1]:integer, [2]:integer}
----@param size_in_quads? {[1]:integer, [2]:integer}
+---@param pos_in_quads {[1]:integer, [2]:integer}
+---@param size_in_quads {[1]:integer, [2]:integer}
 ---@param pal lib.image.palette
 ---@param all_pals lib.image.palettes
 ---@param names? string[] Names for marks to travel across different parts.
+---@return src.proto.skin
 function Skin:recolor_part(pos_in_quads, size_in_quads, pal, all_pals, names)
   local palettes = require("lib.image.palettes")
   local x, y = unpack(pos_in_quads)
