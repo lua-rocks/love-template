@@ -148,6 +148,7 @@ Drawable.updaters = {
     self:update("pos")
     self:update("expander")
   end,
+  -- TODO: Make possible to use any updater recursive.
   geometry_recursive = function(self)
     self:update("geometry")
     for _, node in ipairs(self) do
