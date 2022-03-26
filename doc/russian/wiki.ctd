@@ -52,11 +52,11 @@
 
 Инициализирует себя.</rich_text>
         </node>
-        <node name="switch" unique_id="30" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648250609" ts_lastsave="1648271810">
+        <node name="switch" unique_id="30" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648250609" ts_lastsave="1648273341">
           <rich_text scale="h1" weight="heavy">switch</rich_text>
           <rich_text scale="h1">(self, </rich_text>
           <rich_text scale="h1" weight="heavy">name</rich_text>
-          <rich_text scale="h1">) : self</rich_text>
+          <rich_text scale="h1">)</rich_text>
           <rich_text>
 
 Переключает активный шрифт.
@@ -417,13 +417,13 @@
           <rich_text weight="heavy">loaded</rich_text>
           <rich_text> : table - Обработанная сцена.</rich_text>
         </node>
-        <node name="resize" unique_id="20" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248396" ts_lastsave="1648249821">
+        <node name="resize" unique_id="20" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248396" ts_lastsave="1648273383">
           <rich_text scale="h1" weight="heavy">resize</rich_text>
           <rich_text scale="h1">(self, </rich_text>
           <rich_text scale="h1" weight="heavy">w</rich_text>
           <rich_text scale="h1">, </rich_text>
           <rich_text scale="h1" weight="heavy">h</rich_text>
-          <rich_text scale="h1">) : self</rich_text>
+          <rich_text scale="h1">)</rich_text>
           <rich_text>
 
 • </rich_text>
@@ -434,11 +434,11 @@
 
 Событие изменения размеров окна.</rich_text>
         </node>
-        <node name="keypressed" unique_id="21" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248668" ts_lastsave="1648249803">
+        <node name="keypressed" unique_id="21" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248668" ts_lastsave="1648273386">
           <rich_text scale="h1" weight="heavy">keypressed</rich_text>
           <rich_text scale="h1">(self : </rich_text>
           <rich_text scale="h1" weight="heavy">key</rich_text>
-          <rich_text scale="h1">) : self</rich_text>
+          <rich_text scale="h1">)</rich_text>
           <rich_text>
 
 Событие нажатия клавиши.
@@ -447,13 +447,13 @@
           <rich_text weight="heavy">key</rich_text>
           <rich_text> : string - Клавиша.</rich_text>
         </node>
-        <node name="mousemoved" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248677" ts_lastsave="1648249806">
+        <node name="mousemoved" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248677" ts_lastsave="1648273388">
           <rich_text scale="h1" weight="heavy">mousemoved</rich_text>
           <rich_text scale="h1">(self, </rich_text>
           <rich_text scale="h1" weight="heavy">x</rich_text>
           <rich_text scale="h1">, </rich_text>
           <rich_text scale="h1" weight="heavy">y</rich_text>
-          <rich_text scale="h1">) : self</rich_text>
+          <rich_text scale="h1">)</rich_text>
           <rich_text>
 
 Событие движения мыши.
@@ -464,7 +464,7 @@
           <rich_text weight="heavy">y</rich_text>
           <rich_text> : number - Координаты курсора.</rich_text>
         </node>
-        <node name="mousepressed" unique_id="23" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248694" ts_lastsave="1648249808">
+        <node name="mousepressed" unique_id="23" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248694" ts_lastsave="1648273391">
           <rich_text scale="h1" weight="heavy">mousepressed</rich_text>
           <rich_text scale="h1">(self, </rich_text>
           <rich_text scale="h1" weight="heavy">x</rich_text>
@@ -472,7 +472,7 @@
           <rich_text scale="h1" weight="heavy">y</rich_text>
           <rich_text scale="h1">, </rich_text>
           <rich_text scale="h1" weight="heavy">button</rich_text>
-          <rich_text scale="h1">) : self</rich_text>
+          <rich_text scale="h1">)</rich_text>
           <rich_text>
 
 Событие нажатия клавиши мыши.
@@ -593,8 +593,14 @@
 • </rich_text>
         <rich_text link="node 36">on_update?</rich_text>
         <rich_text> - Событие обновления.</rich_text>
-        <node name="init" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648271931" ts_lastsave="1648271935">
+        <node name="init" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648271931" ts_lastsave="1648272781">
           <rich_text scale="h1">init(self) : self</rich_text>
+          <rich_text>
+
+Инициализирует себя.</rich_text>
+        </node>
+        <node name="draw" unique_id="37" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648272781" ts_lastsave="1648273400">
+          <rich_text scale="h1">draw(self)</rich_text>
           <rich_text>
 
 Инициализирует себя.</rich_text>
