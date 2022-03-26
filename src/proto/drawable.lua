@@ -194,6 +194,7 @@ function Drawable:draw()
   end
 end
 
+-- TODO: Make possible to use any method recursive.
 ---@return src.proto.drawable
 function Drawable:draw_recursive()
   self:draw()

@@ -337,7 +337,7 @@
           <rich_text scale="h2">? : integer</rich_text>
         </node>
       </node>
-      <node name="win" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648079672" ts_lastsave="1648278753">
+      <node name="win" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="1" foreground="#8f5902" ts_creation="1648079672" ts_lastsave="1648280491">
         <rich_text link="file Li4vLi4vc3JjL2FwcC93aW4ubHVh" scale="h1">src.app.win</rich_text>
         <rich_text scale="h1"> : </rich_text>
         <rich_text link="node 13" scale="h1">src.proto.drawable</rich_text>
@@ -496,14 +496,14 @@
       <rich_text>) являются </rich_text>
       <rich_text link="webs https://ru.wikipedia.org/wiki/Эйдос">эйдосами</rich_text>
       <rich_text> нашего приложения. В коде они всегда пишутся с заглавной буквы.</rich_text>
-      <node name="drawable" unique_id="13" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241585" ts_lastsave="1648279492">
+      <node name="drawable" unique_id="13" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="1" foreground="#8f5902" ts_creation="1648241585" ts_lastsave="1648280497">
         <rich_text link="file Li4vLi4vc3JjL3Byb3RvL2RyYXdhYmxlLmx1YQ==" scale="h1">src.proto.drawable</rich_text>
         <rich_text>
 
 Рисуемым считаются все узлы </rich_text>
         <rich_text link="node 7">сцены</rich_text>
         <rich_text> и </rich_text>
-        <rich_text link="node 12">окно</rich_text>
+        <rich_text link="node 12" weight="heavy">окно</rich_text>
         <rich_text>.</rich_text>
         <node name="app" unique_id="52" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="4" is_bold="0" foreground="" ts_creation="1648278912" ts_lastsave="1648279064">
           <rich_text scale="h1" weight="heavy">app</rich_text>
@@ -677,11 +677,32 @@
 
 Инициализирует себя.</rich_text>
         </node>
-        <node name="draw" unique_id="37" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648272781" ts_lastsave="1648276876">
+        <node name="draw" unique_id="37" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648272781" ts_lastsave="1648280700">
           <rich_text scale="h1">draw(self)</rich_text>
           <rich_text>
 
-Инициализирует себя.</rich_text>
+Рисует себя.</rich_text>
+        </node>
+        <node name="draw_recursive" unique_id="69" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648280564" ts_lastsave="1648280678">
+          <rich_text scale="h1">draw_recursive(self)</rich_text>
+          <rich_text>
+
+Рисует себя и дочерние элементы.</rich_text>
+        </node>
+        <node name="update" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648280700" ts_lastsave="1648280763">
+          <rich_text scale="h1">update(self, what)</rich_text>
+          <rich_text>
+
+Обновляет себя.
+
+</rich_text>
+          <rich_text scale="h2" weight="heavy">what</rich_text>
+          <rich_text scale="h2"> : string</rich_text>
+          <rich_text>
+
+Имя </rich_text>
+          <rich_text link="node 58">апдейтера</rich_text>
+          <rich_text>.</rich_text>
         </node>
         <node name="on_draw?" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="3" is_bold="0" foreground="#a40000" ts_creation="1648272041" ts_lastsave="1648279420">
           <rich_text scale="h1">on_draw(self)?</rich_text>
@@ -723,8 +744,10 @@
           <rich_text>.</rich_text>
         </node>
       </node>
-      <node name="rect" unique_id="14" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241592" ts_lastsave="1648278655">
+      <node name="rect" unique_id="14" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241592" ts_lastsave="1648280877">
         <rich_text link="file Li4vLi4vc3JjL3Byb3RvL3JlY3QubHVh" scale="h1">src.proto.rect</rich_text>
+        <rich_text scale="h1"> : </rich_text>
+        <rich_text link="node 13" scale="h1">src.proto.drawable</rich_text>
       </node>
       <node name="skin" unique_id="15" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="#8f5902" ts_creation="1648241599" ts_lastsave="1648278663">
         <rich_text link="file Li4vLi4vc3JjL3Byb3RvL3NraW4ubHVh" scale="h1">src.proto.skin</rich_text>
