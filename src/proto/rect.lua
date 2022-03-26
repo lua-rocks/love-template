@@ -10,7 +10,7 @@ Rect.updaters = {
   image = function(self)
     if type(self.image) == "string" then
       self.image = lg.newImage(self.image)
-      return self
+      return
     end
     if self.skin then
       local skin = self.app.skins.mc_gui_rect
@@ -32,12 +32,10 @@ Rect.updaters = {
       end
       self.image = batch
     end
-    return self
   end,
   size = function(self)
     Drawable.updaters.size(self)
     Rect.updaters.image(self)
-    return self
   end,
 }
 
@@ -59,7 +57,6 @@ function Rect:draw()
     lg.setColor(1, 1, 1)
     lg.draw(self.image, x, y)
   end
-  return self
 end
 
 return Rect

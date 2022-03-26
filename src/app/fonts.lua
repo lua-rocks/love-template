@@ -25,7 +25,6 @@ end
 function fonts:switch(name)
   self.current = self[name]
   love.graphics.setFont(self.current)
-  return self
 end
 
 return fonts

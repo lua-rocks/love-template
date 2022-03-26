@@ -90,7 +90,6 @@ end
 
 function win:draw()
   lg.scale(self.scale)
-  return self
 end
 
 function win:draw_recursive()
@@ -107,26 +106,22 @@ function win:resize(w, h)
   self.abs_size[1] = math.floor(w / self.scale)
   self.abs_size[2] = math.floor(h / self.scale)
   self:update("geometry_recursive")
-  return self
 end
 
 ---@param key string
----@return src.app.win
 function win:keypressed(key)
   if key == "escape" then
     love.event.quit()
   end
-  return self
 end
 
 ---@param x number
 ---@param y number
----@return src.app.win
 function win:mousemoved(x, y)
   local hovered_before = self.hovered
   local hovered_after = self.app.stack:touch({ x / self.scale, y / self.scale })
   if hovered_before == hovered_after then
-    return self
+    return
   end
   if hovered_before and hovered_before.on_hover then
     hovered_before:on_hover(false)
@@ -135,19 +130,16 @@ function win:mousemoved(x, y)
     hovered_after:on_hover(true)
   end
   self.hovered = hovered_after
-  return self
 end
 
 ---@param x number
 ---@param y number
 ---@param button integer
----@return src.app.win
 function win:mousepressed(x, y, button)
   local clicked = self.app.stack:touch({ x / self.scale, y / self.scale })
   if clicked and clicked.on_click then
     clicked:on_click(button)
   end
-  return self
 end
 
 return win

@@ -13,7 +13,6 @@ Text.updaters = {
     self.text_obj = lg.newText(self.parent.app.fonts.current, self.text)
     self.abs_size = { self.text_obj:getDimensions() }
     self:update("geometry")
-    return self
   end,
 }
 
@@ -38,7 +37,6 @@ function Text:draw()
     lg.setColor(self.abs_colors[1])
   end
   lg.draw(self.text_obj, x, y)
-  return self
 end
 
 return Text
