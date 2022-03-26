@@ -52,7 +52,7 @@
 
 Инициализирует себя.</rich_text>
         </node>
-        <node name="switch" unique_id="30" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648250609" ts_lastsave="1648250648">
+        <node name="switch" unique_id="30" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648250609" ts_lastsave="1648271810">
           <rich_text scale="h1" weight="heavy">switch</rich_text>
           <rich_text scale="h1">(self, </rich_text>
           <rich_text scale="h1" weight="heavy">name</rich_text>
@@ -70,7 +70,7 @@
           <rich_text>, итд).</rich_text>
         </node>
       </node>
-      <node name="palettes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648079221" ts_lastsave="1648250414">
+      <node name="palettes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648079221" ts_lastsave="1648268115">
         <rich_text link="file Li4vLi4vc3JjL2FwcC9wYWxldHRlcy5sdWE=" scale="h1">Палитры</rich_text>
         <rich_text>
 
@@ -185,7 +185,7 @@
         <rich_text justification="left"></rich_text>
         <encoded_png char_offset="704" justification="left" link="">iVBORw0KGgoAAAANSUhEUgAAAIAAAABICAYAAAA+hf0SAAAABHNCSVQICAgIfAhkiAAAAftJREFUeJzt3bFqk2EUgOE/JYNDhg4dQvEGAga69w4Kzdq5gxcgdPAS3BxcBceMvYAKEQstRRBBCA2WIEX0J0Tp0CGDpK6CcA71608g7/ush/x8w8sH5+vQ1vTX+K4S1saqD6DVMgA4A4AzADgDgDMAOAOAa6/6AGrW7dvTcO4NAGcAcAYAZwBwBgBnAHAGANf4O8Bw+CGc1/1eOH/2pPOQx/nH7+8vin7f3n7+QCf5P9mev3x9HM69AeAMAM4A4AwAzgDgDADOAOCK3wGyPf/m6l04n9f9cP6yug3n2TtBtue/Gn8M508/h+Pq0UH8/dJ3gtI9/2g6D+feAHAGAGcAcAYAZwBwBgBnAHDpO0Dpnj+Z/Azn17M34bxXHYbz7J2gquM9//xkEc67P+J3hv0q/n72TrAY74bz0j3/U12Hc28AOAOAMwA4A4AzADgDgDMAuHbTe/7Z+3hPrpI9OpO9E3yp4z3/6zCej7qb9z7T37J3guXFLJyX7vkZbwA4A4AzADgDgDMAOAOAMwC4dvN7fplvl/Hfw/Pfx3t+Jt+zu0XfHzW852e8AeAMAM4A4AwAzgDgDADOAOBag71B+H8Dm97z191ON34naHrPz3gDwBkAnAHAGQCcAcAZAJwBwLW2Oo/DdwCtN28AOAOAMwA4A4AzADgDgDMAuD9duXxpkgdPkQAAAABJRU5ErkJggg==</encoded_png>
         <encoded_png char_offset="1445" justification="left" link="">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</encoded_png>
-        <node name="init" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648250351" ts_lastsave="1648250437">
+        <node name="init" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648250351" ts_lastsave="1648271849">
           <rich_text scale="h1" weight="heavy">init</rich_text>
           <rich_text scale="h1">(self, </rich_text>
           <rich_text scale="h1" weight="heavy">main_index</rich_text>
@@ -196,10 +196,10 @@
 
 • </rich_text>
           <rich_text weight="heavy">main_index</rich_text>
-          <rich_text>? : 5 - Индекс палитры, используемой в качестве главной.</rich_text>
+          <rich_text>? : integer = 5 - Индекс палитры, используемой в качестве главной.</rich_text>
         </node>
       </node>
-      <node name="skins" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648079455" ts_lastsave="1648250296">
+      <node name="skins" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648079455" ts_lastsave="1648268233">
         <rich_text link="file Li4vLi4vc3JjL2FwcC9za2lucy5sdWE=" scale="h1">Скины</rich_text>
         <rich_text>
 
@@ -218,7 +218,19 @@
    • </rich_text>
         <rich_text weight="heavy">mc_gui_rect</rich_text>
         <rich_text> - Многоцветная часть GUI для прямоугольников.
-      • Варианты цветов (marks): "red", "orange", "grass", "water",  "gray", "wood".
+      • Варианты цветов (marks): "</rich_text>
+        <rich_text family="monospace" background="#d0d046464848" foreground="#14140c0c1c1c">red</rich_text>
+        <rich_text>", "</rich_text>
+        <rich_text family="monospace" background="#d2d27d7d2c2c" foreground="#14140c0c1c1c">orange</rich_text>
+        <rich_text>", "</rich_text>
+        <rich_text family="monospace" background="#6d6caaaa2c2b" foreground="#14140c0c1c1c">grass</rich_text>
+        <rich_text>", "</rich_text>
+        <rich_text family="monospace" background="#59587d7ccece" foreground="#14140c0c1c1c">water</rich_text>
+        <rich_text>",  "</rich_text>
+        <rich_text family="monospace" background="#4e4e4a4a4e4e" foreground="#dedeeeeed6d6">gray</rich_text>
+        <rich_text>", "</rich_text>
+        <rich_text family="monospace" background="#85854c4c3030" foreground="#dedeeeeed6d6">wood</rich_text>
+        <rich_text>".
 
 </rich_text>
         <rich_text scale="h2">Методы</rich_text>
@@ -380,7 +392,7 @@
 • </rich_text>
         <rich_text link="node 23">mousepressed</rich_text>
         <rich_text> - Событие нажатия клавиши мыши.</rich_text>
-        <node name="init" unique_id="19" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248245" ts_lastsave="1648250473">
+        <node name="init" unique_id="19" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648248245" ts_lastsave="1648271931">
           <rich_text scale="h1">init(self) : self</rich_text>
           <rich_text>
 
@@ -485,7 +497,7 @@
       <rich_text>) являются </rich_text>
       <rich_text link="webs https://ru.wikipedia.org/wiki/Эйдос">эйдосами</rich_text>
       <rich_text> нашего приложения. В коде они всегда пишутся с заглавной буквы.</rich_text>
-      <node name="drawable" unique_id="13" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648241585" ts_lastsave="1648247920">
+      <node name="drawable" unique_id="13" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648241585" ts_lastsave="1648272706">
         <rich_text link="file Li4vLi4vc3JjL3Byb3RvL2RyYXdhYmxlLmx1YQ==" scale="h1">Рисуемое</rich_text>
         <rich_text>
 
@@ -493,7 +505,120 @@
         <rich_text link="node 7">сцены</rich_text>
         <rich_text> и </rich_text>
         <rich_text link="node 12">окно</rich_text>
-        <rich_text>.</rich_text>
+        <rich_text>.
+
+</rich_text>
+        <rich_text scale="h2">Поля</rich_text>
+        <rich_text>
+
+• </rich_text>
+        <rich_text weight="heavy">app</rich_text>
+        <rich_text> : </rich_text>
+        <rich_text link="node 4">src.app</rich_text>
+        <rich_text> - Ссылка на приложение.
+• </rich_text>
+        <rich_text weight="heavy">parent</rich_text>
+        <rich_text> : </rich_text>
+        <rich_text link="node 13">src.proto.drawable</rich_text>
+        <rich_text> - Родительский узел (у </rich_text>
+        <rich_text link="node 12">окна</rich_text>
+        <rich_text> отсутствует).
+• </rich_text>
+        <rich_text weight="heavy">root</rich_text>
+        <rich_text> : </rich_text>
+        <rich_text link="node 13">src.proto.drawable</rich_text>
+        <rich_text> - Корневой узел в иерархии узлов.
+• </rich_text>
+        <rich_text weight="heavy">abs_size</rich_text>
+        <rich_text> : {[1]:number, [2]:number} - Абсолютный размер.
+• </rich_text>
+        <rich_text weight="heavy">abs_pos</rich_text>
+        <rich_text> : {[1]:number, [2]:number} - Абсолютная позиция.
+• </rich_text>
+        <rich_text weight="heavy">rel_pos</rich_text>
+        <rich_text> : {[1]:number, [2]:number} - Относительная позиция.
+• </rich_text>
+        <rich_text weight="heavy">updaters</rich_text>
+        <rich_text> : table&lt;string, function&gt; - Таблица с методами обновления себя.
+• </rich_text>
+        <rich_text weight="heavy">pos</rich_text>
+        <rich_text>? : {[1]:number|string, [2]:number|string} - Позиция, казанная при инициализации.
+• </rich_text>
+        <rich_text weight="heavy">size</rich_text>
+        <rich_text>? : {[1]:number|string, [2]:number|string} - Размер, указанный при инициализации.
+• </rich_text>
+        <rich_text weight="heavy">colors</rich_text>
+        <rich_text>? : table&lt;integer|string,string&gt; - Набор имён цветов для разукрашивания.
+• </rich_text>
+        <rich_text weight="heavy">abs_colors</rich_text>
+        <rich_text>? : table&lt;integer|string,lib.image.color&gt; - Набор реальных цветов. 
+• </rich_text>
+        <rich_text weight="heavy">closed</rich_text>
+        <rich_text>? : boolean - Держать ли содержимое элемента внутри него?
+• </rich_text>
+        <rich_text weight="heavy">expander</rich_text>
+        <rich_text>? : boolean|{[1]?:number, [2]?:number} - Увеличивать ли родителя, если тот меньше?
+• </rich_text>
+        <rich_text weight="heavy">id</rich_text>
+        <rich_text>? : string - Уникальный идентификатор.
+• </rich_text>
+        <rich_text weight="heavy">name</rich_text>
+        <rich_text>? : string - Простой идентификатор.
+• </rich_text>
+        <rich_text weight="heavy">tags</rich_text>
+        <rich_text>? : string[] - Тэги.
+• (integer) : </rich_text>
+        <rich_text link="node 13">src.proto.drawable</rich_text>
+        <rich_text> - Вложенные узлы (в порядке Z-индекса).
+
+</rich_text>
+        <rich_text scale="h2">Методы</rich_text>
+        <rich_text>
+
+• </rich_text>
+        <rich_text link="node 31">init</rich_text>
+        <rich_text> - Инициализирует себя.
+• </rich_text>
+        <rich_text link="node 32">on_draw?</rich_text>
+        <rich_text> - Событие отрисовки.
+• </rich_text>
+        <rich_text link="node 33">on_init?</rich_text>
+        <rich_text> - Событие инициализации.
+• </rich_text>
+        <rich_text link="node 34">on_hover?</rich_text>
+        <rich_text> - Событие наведения мыши.
+• </rich_text>
+        <rich_text link="node 35">on_click?</rich_text>
+        <rich_text> - События клика.
+• </rich_text>
+        <rich_text link="node 36">on_update?</rich_text>
+        <rich_text> - Событие обновления.</rich_text>
+        <node name="init" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648271931" ts_lastsave="1648271935">
+          <rich_text scale="h1">init(self) : self</rich_text>
+          <rich_text>
+
+Инициализирует себя.</rich_text>
+        </node>
+        <node name="on_draw?" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648272041" ts_lastsave="1648272559">
+          <rich_text scale="h1">on_draw(self)?</rich_text>
+        </node>
+        <node name="on_init?" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648272048" ts_lastsave="1648272587">
+          <rich_text scale="h1">on_init(self)?</rich_text>
+        </node>
+        <node name="on_hover?" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648272056" ts_lastsave="1648272590">
+          <rich_text scale="h1">on_hover(self)?</rich_text>
+        </node>
+        <node name="on_click?" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648272064" ts_lastsave="1648272594">
+          <rich_text scale="h1">on_click(self)?</rich_text>
+        </node>
+        <node name="on_update?" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648272071" ts_lastsave="1648272665">
+          <rich_text scale="h1">on_update(self, what)?</rich_text>
+          <rich_text>
+
+• </rich_text>
+          <rich_text weight="heavy">what</rich_text>
+          <rich_text> : string</rich_text>
+        </node>
       </node>
       <node name="rect" unique_id="14" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648241592" ts_lastsave="1648245742">
         <rich_text link="file Li4vLi4vc3JjL3Byb3RvL3JlY3QubHVh" scale="h1">Прямоугольник</rich_text>
@@ -515,11 +640,19 @@
       <rich_text family="monospace">production.lua</rich_text>
       <rich_text> (в зависимости от режима) и объявляет все глобальные переменные, используемые нашей программой. Объявлять их из других мест запрещается.</rich_text>
     </node>
-    <node name="views" unique_id="7" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648077401" ts_lastsave="1648249001">
+    <node name="views" unique_id="7" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1648077401" ts_lastsave="1648254021">
       <rich_text link="fold Li4vLi4vc3JjL3ZpZXdz" scale="h1">Сцены</rich_text>
       <rich_text>
 
 Здесь содержатся сцены приложения, описывающие пользовательский интерфейс и игровой мир в различных его состояниях.
+
+Сценой является таблица, в которой поле </rich_text>
+      <rich_text weight="heavy">node</rich_text>
+      <rich_text> содержит название </rich_text>
+      <rich_text link="node 13">рисуемого</rich_text>
+      <rich_text> </rich_text>
+      <rich_text link="node 6">прототипа</rich_text>
+      <rich_text>, а все остальные слоты - это слоты данного узла.
 
 Стартовой считается сцена </rich_text>
       <rich_text family="monospace">main.lua</rich_text>

@@ -187,6 +187,7 @@ function Drawable:init()
   return self
 end
 
+---@return src.proto.drawable
 function Drawable:draw()
   if self.abs_colors and self.abs_colors[1] then
     lg.setColor(unpack(self.abs_colors[1]))
@@ -199,6 +200,7 @@ function Drawable:draw()
   return self
 end
 
+---@return src.proto.drawable
 function Drawable:draw_recursive()
   self:draw()
   local function draw_nodes()
@@ -219,6 +221,8 @@ function Drawable:draw_recursive()
   return self
 end
 
+---@param what string Updater name.
+---@return src.proto.drawable
 function Drawable:update(what)
   for parent in proto.parents(self) do
     if parent.updaters and parent.updaters[what] then
